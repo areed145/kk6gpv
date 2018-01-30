@@ -8,6 +8,7 @@
 <!– colormaps –><?php include('includes/colormaps.php');?>
 <!- nav -><?php include('includes/nav.php');?>
 <!- nav_aprs -><?php include('includes/nav_aprs.php');?>
+
 <html>
     <head>
         <!-- Plotly.js --><script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
@@ -199,4 +200,5 @@
     </body>
 <!- plotly_aprs -><?php include('includes/plotly_aprs.php');?>
 </html>
+
 <!- footer -><?php include('includes/footer.php');?>
