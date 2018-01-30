@@ -14,15 +14,15 @@
         <table bgcolor="#F0FFFF">
             <tr>
                 <td width="50%"><p align=center>NEXRAD Radar<img width="100%" src="http://www2.findu.com/cgi-bin/radar-find.cgi?call=<?php echo $callsign;?>"></p></td>
-                <td width="50%"><p align=center>Windstar<img width="100%" src="http://www.findu.com/cgi-bin/windstar.cgi?call=<?php echo $callsign;?>&last=120&xsize=100&ysize=100&units=english"></p></td>
+                <td width="50%"><p align=center>Windstar<img width="100%" src="http://www.findu.com/cgi-bin/windstar.cgi?call=<?php echo $callsign;?>&last=120&xsize=200&ysize=200&units=english"></p></td>
             </tr>
             <tr>
-                <td width="50%"><p align=center>Barometric Pressure<img width="100%" src="http://www.findu.com/cgi-bin/baro.cgi?call=<?php echo $callsign;?>&tz=480&last=120&xsize=350&ysize=150&units=english"></p></td>
-                <td width="50%"><p align=center>Rain<img width="100%" src="http://www.findu.com/cgi-bin/rain.cgi?call=<?php echo $callsign;?>&tz=480&last=120&xsize=350&ysize=150&units=english"></p></td>
+                <td width="50%"><p align=center>Barometric Pressure<img width="100%" src="http://www.findu.com/cgi-bin/baro.cgi?call=<?php echo $callsign;?>&tz=480&last=120&xsize=350&ysize=250&units=english"></p></td>
+                <td width="50%"><p align=center>Rain<img width="100%" src="http://www.findu.com/cgi-bin/rain.cgi?call=<?php echo $callsign;?>&tz=480&last=120&xsize=350&ysize=250&units=english"></p></td>
             </tr>
             <tr>
-                <td width="50%"><p align=center>Wind<img width="100%" src="http://www.findu.com/cgi-bin/wind.cgi?call=<?php echo $callsign;?>&tz=480&last=120&xsize=350&ysize=150&units=english"></p></td>
-                <td width="50%"><p align=center>Temperature<img width="100%" src="http://www.findu.com/cgi-bin/temp.cgi?call=<?php echo $callsign;?>&tz=480&last=120&xsize=350&ysize=150&units=english"></p></td>
+                <td width="50%"><p align=center>Wind<img width="100%" src="http://www.findu.com/cgi-bin/wind.cgi?call=<?php echo $callsign;?>&tz=480&last=120&xsize=350&ysize=250&units=english"></p></td>
+                <td width="50%"><p align=center>Temperature<img width="100%" src="http://www.findu.com/cgi-bin/temp.cgi?call=<?php echo $callsign;?>&tz=480&last=120&xsize=250&ysize=150&units=english"></p></td>
             </tr>
         </table>
     </body>
