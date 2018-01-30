@@ -2,7 +2,10 @@
 <html>
 
 <style>
-
+html * {
+   font-family: 'Open Sans', sans-serif; !important;
+}
+   
 .gimg { 
    position: relative; 
    width: 100%; /* for IE 6 */
