@@ -3,7 +3,7 @@
 
 <style>
 html * {
-   font-family: 'Open Sans', sans-serif; !important;
+   font-family: 'Verdana', sans-serif; !important;
 }
    
 .gimg { 
