@@ -1,19 +1,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-<!- google analytics -><?php include('includes/google_analytics.php');?>
 <!– style –><?php include('includes/style.php');?>
 <!– header –><?php include('includes/header.php');?>
 <!- nav -><?php include('includes/nav.php');?>
 <!- updates -><?php include('includes/updates.php');?>
 <!- current_wx -><?php include('includes/current_wx.php');?>
-
 <html>
     <head>
         <!-- Plotly.js --><script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     </head>
-
 <h4 align=center>Coconut Barometer</h4>
-
 <table>
     <tr bgcolor="#F0FFFF">
         <td>Station ID</td>
@@ -83,7 +79,6 @@
     <td><p align=center><a href="https://www.wunderground.com/personal-weather-station/dashboard?ID=KCABAKER38">Weather Underground PWS page</p></td>
   </tr>
 </table>
-
 </html>
 <!- plotly_gauge -><?php include('includes/plotly_gauge.php');?>
 <!- footer -><?php include('includes/footer.php');?>
