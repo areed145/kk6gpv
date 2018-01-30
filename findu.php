@@ -1,7 +1,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <!- GETS -><?php $callsign = $_GET["callsign"]; ?>
-<!- google_analytics -><?php include('includes/google_analytics.php');?>
 <!– style –><?php include('includes/style.php');?>
 <!– mysql_cred –><?php include('includes/mysql_cred.php');?>
 <!– fetch_wx –><?php include('includes/fetch_wx.php');?>
