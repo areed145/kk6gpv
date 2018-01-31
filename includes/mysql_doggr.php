@@ -187,8 +187,8 @@ foreach ($inj[0] as $i){
     preg_match("/\/Date\((.*)\)/", $inja[InjectionDate], $date);
     $datestr = substr($date[1],0, -3);
     $date = gmdate("Y-m-d", $datestr);
-    if (empty($header[apinum])) {$apinum = $header["apinum"];} else {$apinum = 'null';}
-    if (empty($header[lease])) {$lease = $header["lease"];} else {$lease = 'null';}
+    if ($header[apinum] == '') {$apinum = $header["apinum"];} else {$apinum = 'null';}
+    if ($header[lease] == '') {$lease = $header["lease"];} else {$lease = 'null';}
     if (empty($header[well])) {$well = $header["well"];} else {$well = 'null';}
     if (empty($header[county])) {$county = $header["county"];} else {$county = 'null';}
     if (empty($header[countycode])) {$countycode = $header["countycode"];} else {$countycode = 'null';}
@@ -220,13 +220,13 @@ foreach ($inj[0] as $i){
     if ($inja[WellType] == 'GD') {$gasinj =  $inja[GasOrAirInjected];} else {$gasinj = 0;}
     if ($inja[WellType] == 'GD') {$airinj =  $inja[GasOrAirInjected];} else {$airinj = 0;}
     if ($inja[WellType] == 'LG') {$lpginj =  $inja[WaterOrSteamInjected];} else {$lpginj = 0;}
-    if ($inja[NumberOfDaysInjected] == '') {$daysinj = 'null';} else {$daysinj = $inja[NumberOfDaysInjected];}
-    if ($inja[SurfaceInjectionPressure] == '') {$psurfinj = 'null';} else {$psurfinj = $inja[SurfaceInjectionPressure];}
-    if ($inja[SourceOfWater] == '')  {$watsrc = 'null';} else {$watsrc = $inja[SourceOfWater];}
-    if ($inja[KindOfWater] == '') {$watknd = 'null';} else {$watknd =  $inja[KindOfWater];}
-    if ($inja[PWTStatus] == '') {$pwtstatus_i = 'null';} else {$pwtstatus_i= $inja[PWTStatus];}
-    if ($inja[Status] == '') {$status_i = 'null';} else {$status_i = $inja[Status];}
-    if ($inja[PoolCode] == '') {$poolcode_i = 'null';} else {$poolcode_i = $inja[PoolCode];}
+    if (empty($inja[NumberOfDaysInjected])) {$daysinj = 'null';} else {$daysinj = $inja[NumberOfDaysInjected];}
+    if (empty($inja[SurfaceInjectionPressure])) {$psurfinj = 'null';} else {$psurfinj = $inja[SurfaceInjectionPressure];}
+    if (empty($inja[SourceOfWater]))  {$watsrc = 'null';} else {$watsrc = $inja[SourceOfWater];}
+    if (empty($inja[KindOfWater])) {$watknd = 'null';} else {$watknd =  $inja[KindOfWater];}
+    if (empty($inja[PWTStatus])) {$pwtstatus_i = 'null';} else {$pwtstatus_i= $inja[PWTStatus];}
+    if (empty($inja[Status])) {$status_i = 'null';} else {$status_i = $inja[Status];}
+    if (empty($inja[PoolCode])) {$poolcode_i = 'null';} else {$poolcode_i = $inja[PoolCode];}
     
     $statement_i->execute(
         array(
