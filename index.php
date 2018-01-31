@@ -61,7 +61,7 @@
     </tr>
 </table>
 <table>
-<col style="width:60%">
+<col style="width:40%">
 <col style="width:30%">
 <col style="width:30%">
   <tr>
