@@ -1,6 +1,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <!– GETS –><?php 
+$inc = $_GET["inc"];
 $api= $_GET["api"];
 $lease= $_GET["lease"];
 $county = $_GET["county"];
