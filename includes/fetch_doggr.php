@@ -1,18 +1,5 @@
 <?php
 
-$api= $_GET["api"];
-$lease= $_GET["lease"];
-$county = $_GET["county"];
-$district = $_GET["district"];
-$opcode = $_GET["opcode"];
-$fieldcode = $_GET["fieldcode"];
-$section = $_GET["section"];
-$township = $_GET["township"];
-$rnge = $_GET["rnge"];
-$status = $_GET["status"];
-$datemin = $_GET["datemin"];
-$datemax = $_GET["datemax"];
-
 $inc = 0.001;
 
 $con = mysqli_connect($databasehost, $databaseusername, $databasepassword, $databasename);
@@ -33,18 +20,18 @@ $query_data = "SELECT date,
                 from t_doggr_prodinj 
                 group by date
                 WHERE 1";
-if (!empty($api)) {$query_data = $query_data . "AND api = '$api'";}
-if (!empty($lease)) {$query_data = $query_data . "AND lease = '$lease'";}
-if (!empty($county)) {$query_data = $query_data . "AND county = '$county'";}
-if (!empty($district)) {$query_data = $query_data . "AND district = $district";}
-if (!empty($opcode)) {$query_data = $query_data . "AND operatorcode = '$opcode'";}
-if (!empty($fieldcode)) {$query_data = $query_data . "AND fieldcode = '$fieldcode'";}
-if (!empty($section)) {$query_data = $query_data . "AND section = '$section'";}
-if (!empty($township)) {$query_data = $query_data . "AND township = '$township'";}
-if (!empty($rnge)) {$query_data = $query_data . "AND rnge = '$rnge'";}
-if (!empty($status)) {$query_data = $query_data . "AND status = '$status'";}
-if (!empty($datemin)) {$query_data = $query_data . "AND date >= '$datemin'";}
-if (!empty($datemax)) {$query_data = $query_data . "AND date <= '$datemax'";}
+if (!empty($api)) {$query_data = $query_data . " AND api = '$api'";}
+if (!empty($lease)) {$query_data = $query_data . " AND lease = '$lease'";}
+if (!empty($county)) {$query_data = $query_data . " AND county = '$county'";}
+if (!empty($district)) {$query_data = $query_data . " AND district = $district";}
+if (!empty($opcode)) {$query_data = $query_data . " AND operatorcode = '$opcode'";}
+if (!empty($fieldcode)) {$query_data = $query_data . " AND fieldcode = '$fieldcode'";}
+if (!empty($section)) {$query_data = $query_data . " AND section = '$section'";}
+if (!empty($township)) {$query_data = $query_data . " AND township = '$township'";}
+if (!empty($rnge)) {$query_data = $query_data . " AND rnge = '$rnge'";}
+if (!empty($status)) {$query_data = $query_data . " AND status = '$status'";}
+if (!empty($datemin)) {$query_data = $query_data . " AND date >= '$datemin'";}
+if (!empty($datemax)) {$query_data = $query_data . " AND date <= '$datemax'";}
 
 echo $query_data;
 

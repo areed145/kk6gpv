@@ -1,5 +1,20 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
+<!– GETS –><?php 
+$api= $_GET["api"];
+$lease= $_GET["lease"];
+$county = $_GET["county"];
+$district = $_GET["district"];
+$opcode = $_GET["opcode"];
+$fieldcode = $_GET["fieldcode"];
+$section = $_GET["section"];
+$township = $_GET["township"];
+$rnge = $_GET["rnge"];
+$status = $_GET["status"];
+$datemin = $_GET["datemin"];
+$datemax = $_GET["datemax"];
+?>
+
 <!– style –><?php include('includes/style.php');?>
 <!– mysql_cred –><?php include('includes/mysql_cred.php');?>
 <!– fetch_doggr –><?php include('includes/fetch_doggr.php');?>
