@@ -104,19 +104,19 @@ foreach ($prod[0] as $p){
     if ($header[elev] != '') {$elev = $header["elev"];} else {$elev = -99;}
     if ($header[latitude] != '') {$latitude = $header["latitude"];} else {$latitude = -99;}
     if ($header[longitude] != '') {$longitude = $header["longitude"];} else {$longitude = -99;}
-    if ($proda[OilProduced] != '') {$oil = 0 ;} else {$oil = $proda[OilProduced];}
-    if ($proda[WaterProduced] != '') {$water = 0 ;} else {$water = $proda[WaterProduced];}
-    if ($proda[GasProduced] != '') {$gas = 0 ;} else {$gas = $proda[GasProduced];}
-    if ($proda[NumberOfDaysInjected] != '') {$daysprod = 'null';} else {$daysprod = $proda[NumberOfDaysInjected];}
-    if ($proda[OilGravity] != '') {$psurfinj = 'null';} else {$psurfinj = $proda[SurfaceInjectionPressure];}
-    if ($proda[CasingPressure] != '')  {$watsrc = 'null';} else {$watsrc = $proda[CasingPressure];}
-    if ($proda[TubingPressure] != '') {$watknd = 'null';} else {$watknd =  $proda[TubingPressure];}
-    if ($proda[BTU] != '') {$watknd = 'null';} else {$watknd =  $proda[BTU];}
-    if ($proda[MethodOfOperation] != '') {$watknd = 'null';} else {$watknd =  $proda[MethodOfOperation];}
-    if ($proda[WaterDisposition] != '') {$watknd = 'null';} else {$watknd =  $proda[WaterDisposition];}
-    if ($proda[PWTStatus] != '') {$pwtstatus_p = 'null';} else {$pwtstatus_p = $proda[PWTStatus];}
-    if ($proda[Status] != '') {$status_p = 'null';} else {$status_p = $proda[Status];}
-    if ($proda[PoolCode] != '') {$poolcode_p = 'null';} else {$poolcode_p = $proda[PoolCode];}
+    if ($proda[OilProduced] != '') {$oil = $proda[OilProduced];} else {$oil = 0;}
+    if ($proda[WaterProduced] != '') {$water = $proda[WaterProduced];} else {$water = 0;} 
+    if ($proda[GasProduced] != '') {$gas = $proda[GasProduced];} else {$gas = 0;}
+    if ($proda[NumberOfDaysInjected] != '') {$daysprod = $proda[NumberOfDaysInjected];} else {$daysprod = 'null';}
+    if ($proda[OilGravity] != '') {$psurfinj = $proda[SurfaceInjectionPressure];} else {$psurfinj = 'null';}
+    if ($proda[CasingPressure] != '')  {$pcsg = $proda[CasingPressure];} else {$pcsg = 'null';}
+    if ($proda[TubingPressure] != '') {$ptbg = $proda[TubingPressure];} else {$ptbg = 'null';} 
+    if ($proda[BTU] != '') {$btu = $proda[BTU];} else {$btu = 'null';}
+    if ($proda[MethodOfOperation] != '') {$method = $proda[MethodOfOperation];} else {$method = 'null';}
+    if ($proda[WaterDisposition] != '') {$waterdisp = $proda[WaterDisposition];} else {$waterdisp = 'null';}
+    if ($proda[PWTStatus] != '') {$pwtstatus_p = $proda[PWTStatus];} else {$pwtstatus_p = 'null';}
+    if ($proda[Status] != '') {$status_p = $proda[Status];} else {$status_p = 'null';} else 
+    if ($proda[PoolCode] != '') {$poolcode_p = $proda[PoolCode];} else {$poolcode_p = 'null';}
     $statement_p->execute(
         array(
             ':api' => $api,
