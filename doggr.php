@@ -22,7 +22,7 @@ $datemax = $_GET["datemax"];
 <!– header –><?php include('includes/header.php');?>
 <!– colormaps –><?php include('includes/colormaps.php');?>
 <!- nav -><?php include('includes/nav.php');?>
-<!- nav_wx -><?php include('includes/nav_wx.php');?>
+<!- nav_doggr -><?php include('includes/nav_doggr.php');?>
 
 <html>
     <head>
