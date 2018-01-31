@@ -65,7 +65,7 @@
 <col style="width:30%">
 <col style="width:30%">
   <tr>
-    <td rowspan=2><p align=center>NEXRAD Radar<img width="100%" src="http://www2.findu.com/cgi-bin/radar-find.cgi?call=<?php echo $callsign;?>"></p></td>
+    <td rowspan=2><p align=center>NEXRAD Radar<img width="100%" src="http://www2.findu.com/cgi-bin/radar-find.cgi?call=KK6GPV-13"></p></td>
     <td><p align=center><img border=0 width="100%" src="content/wxstation.jpg"></p></td>
     <td><p align=center>The Coconut Barometer station is a Ambient Weather WS-1400-IP connected to the ObserverIP, which communicates observation data exclusively to Weather Underground as KCABAKER38.</p></td>
   </tr>
