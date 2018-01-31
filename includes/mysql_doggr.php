@@ -69,29 +69,29 @@ $header["elev"] = $elev[1][0];
 $header["latitude"] = $latitude[1][0];
 $header["longitude"] = $longitude[1][0];
 
-if($header[apinum] == ''){$header["apinum"] = 'null';}
-if($header[lease] == ''){$header["lease"] = 'null';}
-if($header[well] == ''){$header["well"] = 'null';}
-if($header[county] == ''){$header["county"] = 'null';}
-if($header[countycode] == ''){$header["countycode"] = 'null';}
-if($header[district] == ''){$header["district"] = -9;}
-if($header[operator] == ''){$header["operator"] = 'null';}
-if($header[operatorcode] == ''){$header["operatorcode"] = 'null';}
-if($header[field] == ''){$header["field"] = 'null';}
-if($header[fieldcode] == ''){$header["fieldcode"] = 'null';}
-if($header[area] == ''){$header["area"] = 'null';}
-if($header[areacode] == ''){$header["areacode"] = 'null';}
-if($header[section] == ''){$header["section"] = -9;}
-if($header[township] == ''){$header["township"] = 'null';}
-if($header[rnge] == ''){$header["rnge"] = 'null';}
-if($header[bm] == ''){$header["bm"] = 'null';}
-if($header[wellstatus] == ''){$header["wellstatus"] = 'null';}
-if($header[pwt] == ''){$header["pwt"] = 'null';}
-if($header[spuddate] == ''){$header["supddate"] = 'null';}
-if($header[gissrc] == ''){$header["gissrc"] = 'null';}
-if($header[elev] == ''){$header["elev"] = -999;}
-if($header[latitude] == ''){$header["latitude"] = 0;}
-if($header[longitude] == ''){$header["longitude"] = 0;}
+if(empty($header[apinum])){$header["apinum"] = 'null';}
+if(empty($header[lease])){$header["lease"] = 'null';}
+if(empty($header[well])){$header["well"] = 'null';}
+if(empty($header[county])){$header["county"] = 'null';}
+if(empty($header[countycode])){$header["countycode"] = 'null';}
+if(empty($header[district])){$header["district"] = -9;}
+if(empty($header[operator])){$header["operator"] = 'null';}
+if(empty($header[operatorcode])){$header["operatorcode"] = 'null';}
+if(empty($header[field])){$header["field"] = 'null';}
+if(empty($header[fieldcode])){$header["fieldcode"] = 'null';}
+if(empty($header[area])){$header["area"] = 'null';}
+if(empty($header[areacode])){$header["areacode"] = 'null';}
+if(empty($header[section])){$header["section"] = -9;}
+if(empty($header[township])){$header["township"] = 'null';}
+if(empty($header[rnge])){$header["rnge"] = 'null';}
+if(empty($header[bm])){$header["bm"] = 'null';}
+if(empty($header[wellstatus])){$header["wellstatus"] = 'null';}
+if(empty($header[pwt])){$header["pwt"] = 'null';}
+if(empty($header[spuddate])){$header["supddate"] = 'null';}
+if(empty($header[gissrc])){$header["gissrc"] = 'null';}
+if(empty($header[elev])){$header["elev"] = -999;}
+if(empty($header[latitude])){$header["latitude"] = 0;}
+if(empty($header[longitude])){$header["longitude"] = 0;}
 
 echo "api, lease, well, county, district, operator, operatorcode, field, fieldcode, area, areacode, section, township, rnge, bm, wellstatus, gissrc, elev, latitude, longitude, date, oil, water, gas, daysprod, oilgrav, pcsg, ptbg, btu, method, waterdisp, pwt_status_p, welltype_p, status_p, poolcode_p<br>";
 
