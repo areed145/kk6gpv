@@ -10,7 +10,7 @@
 
 <html>
     <body>
-        <h4 align=center>findu - <?php echo $callsign;?></h4>
+        <h4 align=center>CWOP QC - <?php echo $callsign;?></h4>
         <table bgcolor="#F0FFFF">
             <tr>
                 <td width="50%"><p align=center>Barometric Pressure QC<img width="100%" src="http://weather.gladstonefamily.net/qchart/<?php echo $callsign;?>?date=<?php echo $utc_now;?>&sensor=baro&addnl=<?php echo $callsign;?>&addnl=CI005&addnl=AT285&addnl=C4038&addnl=UP671&addnl=CSBFL&addnl=UP644&addnl=KBFL&addnl=AN051&addnl=AU202&addnl=E9616"></p></td>
