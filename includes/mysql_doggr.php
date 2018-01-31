@@ -65,7 +65,7 @@ $header["wellstatus"] = $wellstatus[1][0];
 $header["pwt"] = $pwt[1][0];
 $header["spuddate"] = $spuddate[1][0];
 $header["gissrc"] = $gissrc[1][0];
-header["elev"] = $elev[1][0];
+$header["elev"] = $elev[1][0];
 $header["latitude"] = $latitude[1][0];
 $header["longitude"] = $longitude[1][0];
 
