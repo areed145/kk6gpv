@@ -69,7 +69,7 @@ $header["elev"] = $elev[1][0];
 $header["latitude"] = $latitude[1][0];
 $header["longitude"] = $longitude[1][0];
 
-echo "api, lease, well, county, district, operator, operatorcode, field, fieldcode, area, areacode, section, township, rnge, bm, wellstatus, gissrc, elev, latitude, longitude, date, oil, water, gas, daysprod, oilgrav, pcsg, ptbg, btu, method, waterdisp, pwt_status_p, welltype_p, status_p, poolcode_p<br>";
+echo "api, lease, well, county, district, operator, operatorcode, field, fieldcode, area, areacode, section, township, rnge, bm, wellstatus, gissrc, elev, latitude, longitude, date, oil, water, gas, daysprod, oilgrav, pcsg, ptbg, btu, method, waterdisp, pwtstatus_p, welltype_p, status_p, poolcode_p<br>";
 
 $query_p = "INSERT INTO $doggrtable_prodinj
     (api, lease, well, county, district, operator, operatorcode, field, fieldcode, area, areacode, section, township, rnge, bm, wellstatus, gissrc, elev, latitude, longitude, date, oil, water, gas, daysprod, oilgrav, pcsg, ptbg, btu, method, waterdisp, pwtstatus_p, welltype_p, status_p, poolcode_p) 
@@ -115,6 +115,7 @@ foreach ($prod[0] as $p){
     if ($proda[MethodOfOperation] != '') {$method = $proda[MethodOfOperation];} else {$method = 'null';}
     if ($proda[WaterDisposition] != '') {$waterdisp = $proda[WaterDisposition];} else {$waterdisp = 'null';}
     if ($proda[PWTStatus] != '') {$pwtstatus_p = $proda[PWTStatus];} else {$pwtstatus_p = 'null';}
+    if ($proda[WellType] != '') {$welltype_p = $proda[WellType];} else {$welltype_p = 'null';}
     if ($proda[Status] != '') {$status_p = $proda[Status];} else {$status_p = 'null';} else 
     if ($proda[PoolCode] != '') {$poolcode_p = $proda[PoolCode];} else {$poolcode_p = 'null';}
     $statement_p->execute(
@@ -194,7 +195,7 @@ foreach ($prod[0] as $p){
     echo "<br>";
 }
 
-echo "api, lease, well, county, district, operator, operatorcode, field, fieldcode, area, areacode, section, township, rnge, bm, wellstatus, gissrc, elev, latitude, longitude, date, waterdisposal, waterflood, steamflood, cyclic, gasinj, airinj, lpginj, daysinj, pinjsurf, watsrc, watknd, pwt_status_i, welltype_i, status_i, poolcode_i<br>";
+echo "api, lease, well, county, district, operator, operatorcode, field, fieldcode, area, areacode, section, township, rnge, bm, wellstatus, gissrc, elev, latitude, longitude, date, waterdisposal, waterflood, steamflood, cyclic, gasinj, airinj, lpginj, daysinj, pinjsurf, watsrc, watknd, pwtstatus_i, welltype_i, status_i, poolcode_i<br>";
 
 $query_i = "INSERT INTO $doggrtable_prodinj
     (api, lease, well, county, district, operator, operatorcode, field, fieldcode, area, areacode, section, township, rnge, bm, wellstatus, gissrc, elev, latitude, longitude, date, waterdisposal, waterflood, steamflood, cyclic, gasinj, airinj, lpginj, daysinj, pinjsurf, watsrc, watknd, pwtstatus_i, welltype_i, status_i, poolcode_i) 
@@ -261,6 +262,7 @@ foreach ($inj[0] as $i){
     if ($inja[SourceOfWater] != '')  {$watsrc = $inja[SourceOfWater];} else {$watsrc = 'null';}
     if ($inja[KindOfWater] != '') {$watknd =  $inja[KindOfWater];} else {$watknd = 'null';}
     if ($inja[PWTStatus] != '') {$pwtstatus_i= $inja[PWTStatus];} else {$pwtstatus_i = 'null';}
+    if ($inja[WellType] != '') {$welltype_i= $inja[WellType];} else {$welltype_i = 'null';}
     if ($inja[Status] != '') {$status_i = $inja[Status];} else {$status_i = 'null';}
     if ($inja[PoolCode] != '') {$poolcode_i = $inja[PoolCode];} else {$poolcode_i = 'null';}
     $statement_i->execute(
