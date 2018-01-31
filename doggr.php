@@ -22,6 +22,8 @@ $datemax = $_GET["datemax"];
 <!– header –><?php include('includes/header.php');?>
 <!– colormaps –><?php include('includes/colormaps.php');?>
 <!- nav -><?php include('includes/nav.php');?>
+<!- nav_wx -><?php include('includes/nav_wx.php');?>
+
 <html>
     <head>
         <!-- Plotly.js --><script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
