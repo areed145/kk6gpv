@@ -236,7 +236,7 @@ foreach ($inj[0] as $i){
     echo "<br>";
 }
 
-print '<pre>' . htmlspecialchars(print_r(get_defined_vars(), true)) . '</pre>';
-print '<pre>' . htmlspecialchars(print_r($_SERVER, true)) . '</pre>';
+//print '<pre>' . htmlspecialchars(print_r(get_defined_vars(), true)) . '</pre>';
+//print '<pre>' . htmlspecialchars(print_r($_SERVER, true)) . '</pre>';
 
 ?>
