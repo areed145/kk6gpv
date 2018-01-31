@@ -107,8 +107,8 @@ foreach ($prod[0] as $p){
     if ($proda[OilProduced] != '') {$oil = $proda[OilProduced];} else {$oil = 0;}
     if ($proda[WaterProduced] != '') {$water = $proda[WaterProduced];} else {$water = 0;} 
     if ($proda[GasProduced] != '') {$gas = $proda[GasProduced];} else {$gas = 0;}
-    if ($proda[NumberOfDaysInjected] != '') {$daysprod = $proda[NumberOfDaysInjected];} else {$daysprod = 'null';}
-    if ($proda[OilGravity] != '') {$psurfinj = $proda[SurfaceInjectionPressure];} else {$psurfinj = 'null';}
+    if ($proda[NumberOfDaysProduced] != '') {$daysprod = $proda[NumberOfDaysProduced];} else {$daysprod = -99;}
+    if ($proda[OilGravity] != '') {$oilgrav = $proda[OilGravity];} else {$oilgrav = 'null';}
     if ($proda[CasingPressure] != '')  {$pcsg = $proda[CasingPressure];} else {$pcsg = 'null';}
     if ($proda[TubingPressure] != '') {$ptbg = $proda[TubingPressure];} else {$ptbg = 'null';} 
     if ($proda[BTU] != '') {$btu = $proda[BTU];} else {$btu = 'null';}
@@ -257,7 +257,7 @@ foreach ($inj[0] as $i){
     if ($inja[WellType] == 'GD') {$gasinj =  $inja[GasOrAirInjected];} else {$gasinj = 0;}
     if ($inja[WellType] == 'GD') {$airinj =  $inja[GasOrAirInjected];} else {$airinj = 0;}
     if ($inja[WellType] == 'LG') {$lpginj =  $inja[WaterOrSteamInjected];} else {$lpginj = 0;}
-    if ($inja[NumberOfDaysInjected] != '') {$daysinj = $inja[NumberOfDaysInjected];} else {$daysinj = 'null';}
+    if ($inja[NumberOfDaysInjected] != '') {$daysinj = $inja[NumberOfDaysInjected];} else {$daysinj = -99;}
     if ($inja[SurfaceInjectionPressure] != '') {$psurfinj = $inja[SurfaceInjectionPressure];} else {$psurfinj = 'null';}
     if ($inja[SourceOfWater] != '')  {$watsrc = $inja[SourceOfWater];} else {$watsrc = 'null';}
     if ($inja[KindOfWater] != '') {$watknd =  $inja[KindOfWater];} else {$watknd = 'null';}
