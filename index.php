@@ -66,13 +66,16 @@
 <col style="width:30%">
   <tr>
     <td rowspan=2><p align=center>NEXRAD Radar<img width="100%" src="http://www2.findu.com/cgi-bin/radar-find.cgi?call=KK6GPV-13"></p></td>
-    <td><p align=center>
+    <td>
+        <p align=center>
         <a href="http://www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=KCABAKER64">
         <img src="http://banners.wunderground.com/cgi-bin/banner/ban/wxBanner?bannertype=pws250&weatherstationcount=KCABAKER64" width="250" height="150" border="0" alt="Weather Underground PWS KCABAKER64" />
         </a></p>
-    <p align=center><a href="https://www.wunderground.com/personal-weather-station/dashboard?ID=KCABAKER64">Weather Underground PWS page</p>
     </td>
-    <td><p align=center>The Coconut Barometer station is a Ambient Weather WS-1400-IP connected to the ObserverIP, which communicates observation data exclusively to Weather Underground as KCABAKER38</p></td>
+    <td>
+        <p align=center>The Coconut Barometer station is a Ambient Weather WS-1400-IP connected to the ObserverIP, which communicates observation data exclusively to Weather Underground as KCABAKER38</p>
+        <p align=center><a href="https://www.wunderground.com/personal-weather-station/dashboard?ID=KCABAKER64">Weather Underground PWS page</p>
+    </td>
   </tr>
   <tr>
     <td><p align=center><img border=0 width="100%" src="content/wxstation.jpg"></p></td>
