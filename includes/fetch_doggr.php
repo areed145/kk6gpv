@@ -1,6 +1,6 @@
 <?php
 
-$inc = 0.001;
+if (empty($inc)) {$inc = 0.01;}
 
 $con = mysqli_connect($databasehost, $databaseusername, $databasepassword, $databasename);
 if (!$con) {
