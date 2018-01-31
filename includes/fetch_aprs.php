@@ -41,7 +41,7 @@ $row =  mysqli_fetch_assoc($result);
 $startu = $row['start'];
 if (!empty($startu)) {$start = $startu;}
 
-$query_data = "SELECT date(timestamp) - interval $offset hour as timestamp,
+$query_data = "SELECT timestamp - interval $offset hour as timestamp,
                 latitude,
                 longitude,
                 course,
