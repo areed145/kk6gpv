@@ -210,23 +210,23 @@ foreach ($inj[0] as $i){
     if (empty($header[elev])) {$elev = $header["elev"];} else {$elev = 'null';}
     if (empty($header[latitude])) {$latitude = $header["latitude"];} else {$latitude = 'null';}
     if (empty($header[longitude])) {$longitude = $header["longitude"];} else {$longitude = 'null';}
-    if ($inja[WellType] == 'WD') {$waterdisposal =  $inja[WaterOrSteamInjected];} else {$waterdisposal = 'null';}
-    if ($inja[WellType] == 'WF') {$waterflood =  $inja[WaterOrSteamInjected];} else {$waterflood = 'null';}
-    if ($inja[WellType] == 'WS') {$waterflood =  $inja[WaterOrSteamInjected];} else {$waterflood = 'null';}
-    if ($inja[WellType] == 'SF') {$steamflood =  $inja[WaterOrSteamInjected];} else {$steamflood = 'null';}
-    if ($inja[WellType] == 'SC') {$cyclic =  $inja[WaterOrSteamInjected];} else {$cyclic = 'null';}
-    if ($inja[WellType] == 'PM') {$gasinj =  $inja[GasOrAirInjected];} else {$gasinj = 'null';}
-    if ($inja[WellType] == 'GS') {$gasinj =  $inja[GasOrAirInjected];} else {$gasinj = 'null';}
-    if ($inja[WellType] == 'GD') {$gasinj =  $inja[GasOrAirInjected];} else {$gasinj = 'null';}
-    if ($inja[WellType] == 'GD') {$airinj =  $inja[GasOrAirInjected];} else {$airinj = 'null';}
-    if ($inja[WellType] == 'LG') {$lpginj =  $inja[WaterOrSteamInjected];} else {$lpginj = 'null';}
-    if (!$inja[NumberOfDaysInjected] == '') {$daysinj =  $inja[NumberOfDaysInjected];} else {$daysinj = 'null';}
-    if (!$inja[SurfaceInjectionPressure] == '') {$psurfinj =  $inja[SurfaceInjectionPressure];} else {$psurfinj = 'null';}
-    if (!$inja[SourceOfWater] == '') {$watsrc =  $inja[SourceOfWater];} else {$watsrc = 'null';}
-    if (!$inja[KindOfWater] == '') {$watknd =  $inja[KindOfWater];} else {$watknd = 'null';}
-    if (!$inja[PWTStatus] == '') {$pwtstatus_i=  $inja[PWTStatus];} else {$pwtstatus_i = 'null';}
-    if (!$inja[Status] == '') {$status_i =  $inja[Status];} else {$status_i = 'null';}
-    if (!$inja[PoolCode] == '') {$poolcode_i =  $inja[PoolCode];} else {$poolcode_i = 'null';}
+    if ($inja[WellType] == 'WD') {$waterdisposal =  $inja[WaterOrSteamInjected];} else {$waterdisposal = 0;}
+    if ($inja[WellType] == 'WF') {$waterflood =  $inja[WaterOrSteamInjected];} else {$waterflood = 0;}
+    if ($inja[WellType] == 'WS') {$waterflood =  $inja[WaterOrSteamInjected];} else {$waterflood = 0;}
+    if ($inja[WellType] == 'SF') {$steamflood =  $inja[WaterOrSteamInjected];} else {$steamflood = 0;}
+    if ($inja[WellType] == 'SC') {$cyclic =  $inja[WaterOrSteamInjected];} else {$cyclic = 0;}
+    if ($inja[WellType] == 'PM') {$gasinj =  $inja[GasOrAirInjected];} else {$gasinj = 0;}
+    if ($inja[WellType] == 'GS') {$gasinj =  $inja[GasOrAirInjected];} else {$gasinj = 0;}
+    if ($inja[WellType] == 'GD') {$gasinj =  $inja[GasOrAirInjected];} else {$gasinj = 0;}
+    if ($inja[WellType] == 'GD') {$airinj =  $inja[GasOrAirInjected];} else {$airinj = 0;}
+    if ($inja[WellType] == 'LG') {$lpginj =  $inja[WaterOrSteamInjected];} else {$lpginj = 0;}
+    if ($inja[NumberOfDaysInjected] == '') {$daysinj = 'null';} else {$daysinj = $inja[NumberOfDaysInjected];}
+    if ($inja[SurfaceInjectionPressure] == '') {$psurfinj = 'null';} else {$psurfinj = $inja[SurfaceInjectionPressure];}
+    if ($inja[SourceOfWater] == '')  {$watsrc = 'null';} else {$watsrc = $inja[SourceOfWater];}
+    if ($inja[KindOfWater] == '') {$watknd = 'null';} else {$watknd =  $inja[KindOfWater];}
+    if ($inja[PWTStatus] == '') {$pwtstatus_i = 'null';} else {$pwtstatus_i= $inja[PWTStatus];}
+    if ($inja[Status] == '') {$status_i = 'null';} else {$status_i = $inja[Status];}
+    if ($inja[PoolCode] == '') {$poolcode_i = 'null';} else {$poolcode_i = $inja[PoolCode];}
     
     $statement_i->execute(
         array(
