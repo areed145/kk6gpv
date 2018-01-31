@@ -11,7 +11,7 @@
 <html>
     <body>
         <h4 align=center>CWOP QC - <?php echo $callsign;?></h4>
-        <table bgcolor="#F0FFFF">
+        <table>
             <tr bgcolor="#F0FFFF">
                 <td colspan=2>Barometric Pressure QC</td>
             </tr>
