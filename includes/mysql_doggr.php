@@ -116,7 +116,7 @@ foreach ($prod[0] as $p){
     if ($proda[WaterDisposition] != '') {$waterdisp = $proda[WaterDisposition];} else {$waterdisp = 'null';}
     if ($proda[PWTStatus] != '') {$pwtstatus_p = $proda[PWTStatus];} else {$pwtstatus_p = 'null';}
     if ($proda[WellType] != '') {$welltype_p = $proda[WellType];} else {$welltype_p = 'null';}
-    if ($proda[Status] != '') {$status_p = $proda[Status];} else {$status_p = 'null';} else 
+    if ($proda[Status] != '') {$status_p = $proda[Status];} else {$status_p = 'null';}
     if ($proda[PoolCode] != '') {$poolcode_p = $proda[PoolCode];} else {$poolcode_p = 'null';}
     $statement_p->execute(
         array(
