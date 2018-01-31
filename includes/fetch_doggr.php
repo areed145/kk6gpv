@@ -1,24 +1,19 @@
 <?php
 
+$api= $_GET["api"];
+$lease= $_GET["lease"];
+$county = $_GET["county"];
+$district = $_GET["district"];
+$opcode = $_GET["opcode"];
+$fieldcode = $_GET["fieldcode"];
+$section = $_GET["section"];
+$township = $_GET["township"];
+$rnge = $_GET["rnge"];
+$status = $_GET["status"];
+$datemin = $_GET["datemin"];
+$datemax = $_GET["datemax"];
+
 $inc = 0.001;
-if ($period == '6month') {
-    $start = gmdate("Y-m-d",strtotime('-6 month'));
-}
-elseif ($period == '1year') {
-    $start = gmdate("Y-m-d",strtotime('-1 year'));
-}
-elseif ($period == '5year') {
-    $start = gmdate("Y-m-d",strtotime('-5 year')); 
-}
-elseif ($period == '10year') {
-    $start = gmdate("Y-m-d",strtotime('-10 year')); 
-}
-elseif ($period == '20year') {
-    $start = gmdate("Y-m-d",strtotime('-20 year')); 
-}
-else {
-    $start = gmdate("Y-m-d",strtotime('-40 years'));
-};
 
 $con = mysqli_connect($databasehost, $databaseusername, $databasepassword, $databasename);
 if (!$con) {
@@ -28,7 +23,30 @@ if (!$con) {
     exit;
 }
 
-$query_data = "SELECT * from $doggrtable_all";
+$query_data = "SELECT date,
+                count(api) as wells, 
+                sum(oil) as oil, 
+                sum(water) as water, 
+                sum(gas) as gas, 
+                sum(cyclic) as cyclic, 
+                sum(steamflood) as steamflood 
+                from t_doggr_prodinj 
+                group by date
+                WHERE 1";
+if (!empty($api)) {$query_data = $query_data . "AND api = '$api'";}
+if (!empty($lease)) {$query_data = $query_data . "AND lease = '$lease'";}
+if (!empty($county)) {$query_data = $query_data . "AND county = '$county'";}
+if (!empty($district)) {$query_data = $query_data . "AND district = $district";}
+if (!empty($opcode)) {$query_data = $query_data . "AND operatorcode = '$opcode'";}
+if (!empty($fieldcode)) {$query_data = $query_data . "AND fieldcode = '$fieldcode'";}
+if (!empty($section)) {$query_data = $query_data . "AND section = '$section'";}
+if (!empty($township)) {$query_data = $query_data . "AND township = '$township'";}
+if (!empty($rnge)) {$query_data = $query_data . "AND rnge = '$rnge'";}
+if (!empty($status)) {$query_data = $query_data . "AND status = '$status'";}
+if (!empty($datemin)) {$query_data = $query_data . "AND date >= '$datemin'";}
+if (!empty($datemax)) {$query_data = $query_data . "AND date <= '$datemax'";}
+
+//$query_data = "SELECT * from $doggrtable_all";
 $result = mysqli_query($con, $query_data);
 $date = array();
 $wells = array();
@@ -102,15 +120,17 @@ while($row = mysqli_fetch_assoc($result)){
     $steamfloodsum[] = $row['steamfloodsum'];
 }
 
-//$data = [ [
-//    "period" => $period,
-//    "start" => $start,
-//    "end" => $end,
-//    "time" => $time,
-//    "tempavg" => $tempavg,
-//    "tempmin" => $tempmin,
-//] ];
-//$json = json_encode($data);
+$data = [ [
+   "date" => $date,
+   "wells" => $wells,
+   "oil" => $oil,
+   "water" => $water,
+   "gas" => $gas,
+   "steamflood" => $steamflood,
+   "cylic" => $cyclic
+] ];
+$json = json_encode($data);
+echo $json
 
 //print '<pre>' . htmlspecialchars(print_r(get_defined_vars(), true)) . '</pre>';
 

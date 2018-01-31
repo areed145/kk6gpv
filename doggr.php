@@ -1,7 +1,5 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-<!- GETS -><?php $opname = $_GET["opname"];?>
-<!- GETS -><?php $period = $_GET["period"] ?>
 <!– style –><?php include('includes/style.php');?>
 <!– mysql_cred –><?php include('includes/mysql_cred.php');?>
 <!– fetch_doggr –><?php include('includes/fetch_doggr.php');?>
