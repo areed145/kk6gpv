@@ -33,8 +33,6 @@ if (!empty($datemin)) {$query_data = $query_data . " AND date >= '$datemin'";}
 if (!empty($datemax)) {$query_data = $query_data . " AND date <= '$datemax'";}
 $query_data = $query_data . " group by date";
 
-echo $query_data;
-
 //$query_data = "SELECT * from $doggrtable_all";
 $result = mysqli_query($con, $query_data);
 $date = array();
@@ -119,7 +117,8 @@ $data = [ [
    "cylic" => $cyclic
 ] ];
 $json = json_encode($data);
-echo $json;
+
+//echo $json;
 
 //print '<pre>' . htmlspecialchars(print_r(get_defined_vars(), true)) . '</pre>';
 
