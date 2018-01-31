@@ -74,7 +74,7 @@
   <tr>
     <td colspan=2>
         <p align=center>The Coconut Barometer station is a Ambient Weather WS-1400-IP connected to the ObserverIP, which communicates observation data exclusively to Weather Underground as KCABAKER38</p>
-        <p align=center><a href="https://www.wunderground.com/personal-weather-station/dashboard?ID=KCABAKER64">Weather Underground PWS page</p>
+        <p align=center><a href="https://www.wunderground.com/personal-weather-station/dashboard?ID=KCABAKER64">Weather Underground PWS page</a></p>
         <p align=center>Observation data is then retrieved from Weather Underground and the plots / graphs are created via a headless Raspberry Pi 3 running wx_scraper Python software I wrote for this purpose (see GitHub page)</p>
     </td>
   </tr>
