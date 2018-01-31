@@ -247,7 +247,6 @@ var data_map = [{
       reversescale: false,
       opacity: 1,
       size: 5,
-      }
     },
     name: 'Wells',
 }];
