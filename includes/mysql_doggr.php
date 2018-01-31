@@ -69,30 +69,6 @@ $header["elev"] = $elev[1][0];
 $header["latitude"] = $latitude[1][0];
 $header["longitude"] = $longitude[1][0];
 
-if(empty($header[apinum])){$header["apinum"] = 'null';}
-if(empty($header[lease])){$header["lease"] = 'null';}
-if(empty($header[well])){$header["well"] = 'null';}
-if(empty($header[county])){$header["county"] = 'null';}
-if(empty($header[countycode])){$header["countycode"] = 'null';}
-if(empty($header[district])){$header["district"] = -9;}
-if(empty($header[operator])){$header["operator"] = 'null';}
-if(empty($header[operatorcode])){$header["operatorcode"] = 'null';}
-if(empty($header[field])){$header["field"] = 'null';}
-if(empty($header[fieldcode])){$header["fieldcode"] = 'null';}
-if(empty($header[area])){$header["area"] = 'null';}
-if(empty($header[areacode])){$header["areacode"] = 'null';}
-if(empty($header[section])){$header["section"] = -9;}
-if(empty($header[township])){$header["township"] = 'null';}
-if(empty($header[rnge])){$header["rnge"] = 'null';}
-if(empty($header[bm])){$header["bm"] = 'null';}
-if(empty($header[wellstatus])){$header["wellstatus"] = 'null';}
-if(empty($header[pwt])){$header["pwt"] = 'null';}
-if(empty($header[spuddate])){$header["supddate"] = 'null';}
-if(empty($header[gissrc])){$header["gissrc"] = 'null';}
-if(empty($header[elev])){$header["elev"] = -999;}
-if(empty($header[latitude])){$header["latitude"] = 0;}
-if(empty($header[longitude])){$header["longitude"] = 0;}
-
 echo "api, lease, well, county, district, operator, operatorcode, field, fieldcode, area, areacode, section, township, rnge, bm, wellstatus, gissrc, elev, latitude, longitude, date, oil, water, gas, daysprod, oilgrav, pcsg, ptbg, btu, method, waterdisp, pwt_status_p, welltype_p, status_p, poolcode_p<br>";
 
 $query_p = "INSERT INTO $doggrtable_prodinj
@@ -211,38 +187,69 @@ foreach ($inj[0] as $i){
     preg_match("/\/Date\((.*)\)/", $inja[InjectionDate], $date);
     $datestr = substr($date[1],0, -3);
     $date = gmdate("Y-m-d", $datestr);
-    if ($inja[WellType] == 'WD') {$waterdisposal =  $inja[WaterOrSteamInjected];} else {$waterdisposal = 0;}
-    if ($inja[WellType] == 'WF') {$waterflood =  $inja[WaterOrSteamInjected];} else {$waterflood = 0;}
-    if ($inja[WellType] == 'WS') {$waterflood =  $inja[WaterOrSteamInjected];} else {$waterflood = 0;}
-    if ($inja[WellType] == 'SF') {$steamflood =  $inja[WaterOrSteamInjected];} else {$steamflood = 0;}
-    if ($inja[WellType] == 'SC') {$cyclic =  $inja[WaterOrSteamInjected];} else {$cyclic = 0;}
-    if ($inja[WellType] == 'PM') {$gasinj =  $inja[GasOrAirInjected];} else {$gasinj = 0;}
-    if ($inja[WellType] == 'GS') {$gasinj =  $inja[GasOrAirInjected];} else {$gasinj = 0;}
-    if ($inja[WellType] == 'GD') {$gasinj =  $inja[GasOrAirInjected];} else {$gasinj = 0;}
-    if ($inja[WellType] == 'GD') {$airinj =  $inja[GasOrAirInjected];} else {$airinj = 0;}
-    if ($inja[WellType] == 'LG') {$lpginj =  $inja[WaterOrSteamInjected];} else {$lpginj = 0;}
+    if (empty($header[apinum])) {$apinum = $header["apinum"];} else {$apinum = 'null';}
+    if (empty($header[lease])) {$lease = $header["lease"];} else {$lease = 'null';}
+    if (empty($header[well])) {$well = $header["well"];} else {$well = 'null';}
+    if (empty($header[county])) {$county = $header["county"];} else {$county = 'null';}
+    if (empty($header[countycode])) {$countycode = $header["countycode"];} else {$countycode = 'null';}
+    if (empty($header[district])) {$district = $header["district"];} else {$district = -99;}
+    if (empty($header[operator])) {$operator = $header["operator"];} else {$operator = 'null';}
+    if (empty($header[operatorcode])) {$operatorcode = $header["operatorcode"];} else {$operatorcode = 'null';}
+    if (empty($header[field])) {$field = $header["field"];} else {$field = 'null';}
+    if (empty($header[fieldcode])) {$fieldcode = $header["fieldcode"];} else {$fieldcode = 'null';}
+    if (empty($header[area])) {$area = $header["area"];} else {$area = 'null';}
+    if (empty($header[areacode])) {$areacode = $header["areacode"];} else {$areacode = 'null';}
+    if (empty($header[section])) {$section = $header["section"];} else {$section = 'null';}
+    if (empty($header[township])) {$township = $header["township"];} else {$township = 'null';}
+    if (empty($header[rnge])) {$rnge = $header["rnge"];} else {$rnge = 'null';}
+    if (empty($header[bm])) {$bm = $header["bm"];} else {$bm = 'null';}
+    if (empty($header[wellstatus])) {$wellstatus = $header["wellstatus"];} else {$wellstatus = 'null';}
+    if (empty($header[pwt])) {$pwt = $header["pwt"];} else {$pwt = 'null';}
+    if (empty($header[spuddate])) {$spuddate = $header["spuddate"];} else {$spuddate = 'null';}
+    if (empty($header[gissrc])) {$gissrc = $header["gissrc"];} else {$gissrc = 'null';}
+    if (empty($header[elev])) {$elev = $header["elev"];} else {$elev = 'null';}
+    if (empty($header[latitude])) {$latitude = $header["latitude"];} else {$latitude = 'null';}
+    if (empty($header[longitude])) {$longitude = $header["longitude"];} else {$longitude = 'null';}
+    if ($inja[WellType] == 'WD') {$waterdisposal =  $inja[WaterOrSteamInjected];} else {$waterdisposal = 'null';}
+    if ($inja[WellType] == 'WF') {$waterflood =  $inja[WaterOrSteamInjected];} else {$waterflood = 'null';}
+    if ($inja[WellType] == 'WS') {$waterflood =  $inja[WaterOrSteamInjected];} else {$waterflood = 'null';}
+    if ($inja[WellType] == 'SF') {$steamflood =  $inja[WaterOrSteamInjected];} else {$steamflood = 'null';}
+    if ($inja[WellType] == 'SC') {$cyclic =  $inja[WaterOrSteamInjected];} else {$cyclic = 'null';}
+    if ($inja[WellType] == 'PM') {$gasinj =  $inja[GasOrAirInjected];} else {$gasinj = 'null';}
+    if ($inja[WellType] == 'GS') {$gasinj =  $inja[GasOrAirInjected];} else {$gasinj = 'null';}
+    if ($inja[WellType] == 'GD') {$gasinj =  $inja[GasOrAirInjected];} else {$gasinj = 'null';}
+    if ($inja[WellType] == 'GD') {$airinj =  $inja[GasOrAirInjected];} else {$airinj = 'null';}
+    if ($inja[WellType] == 'LG') {$lpginj =  $inja[WaterOrSteamInjected];} else {$lpginj = 'null';}
+    if (!$inja[NumberOfDaysInjected] == '') {$daysinj =  $inja[NumberOfDaysInjected];} else {$daysinj = 'null';}
+    if (!$inja[SurfaceInjectionPressure] == '') {$psurfinj =  $inja[SurfaceInjectionPressure];} else {$psurfinj = 'null';}
+    if (!$inja[SourceOfWater] == '') {$watsrc =  $inja[SourceOfWater];} else {$watsrc = 'null';}
+    if (!$inja[KindOfWater] == '') {$watknd =  $inja[KindOfWater];} else {$watknd = 'null';}
+    if (!$inja[PWTStatus] == '') {$pwtstatus_i=  $inja[PWTStatus];} else {$pwtstatus_i = 'null';}
+    if (!$inja[Status] == '') {$status_i =  $inja[Status];} else {$status_i = 'null';}
+    if (!$inja[PoolCode] == '') {$poolcode_i =  $inja[PoolCode];} else {$poolcode_i = 'null';}
+    
     $statement_i->execute(
         array(
             ':api' => $api,
-            ':lease' => $header[lease],
-            ':well' => $header[well],
-            ':county' => $header[county],
-            ':district' => $header[district],
-            ':operator' => $header[operator],
-            ':operatorcode' => $header[operatorcode],
-            ':field' => $header[field],
-            ':fieldcode' => $header[fieldcode],
-            ':area' => $header[area],
-            ':areacode' => $header[areacode],
-            ':section' => $header[section],
-            ':township' => $header[township],
-            ':rnge' => $header[rnge],
-            ':bm' => $header[bm],
-            ':wellstatus' => $header[wellstatus],
-            ':gissrc' => $header[gissrc],
-            ':elev' => $header[elev],
-            ':latitude' => $header[latitude],
-            ':longitude' => $header[longitude],
+            ':lease' => $lease,
+            ':well' => $well,
+            ':county' => $county,
+            ':district' => $district,
+            ':operator' => $operator,
+            ':operatorcode' => $operatorcode,
+            ':field' => $field,
+            ':fieldcode' => $fieldcode,
+            ':area' => $area,
+            ':areacode' => $areacode,
+            ':section' => $section,
+            ':township' => $township,
+            ':rnge' => $rnge,
+            ':bm' => $bm,
+            ':wellstatus' => $wellstatus,
+            ':gissrc' => $gissrc,
+            ':elev' => $elev,
+            ':latitude' => $latitude,
+            ':longitude' => $longitude,
             ':date' => $date,
             ':waterdisposal' => $waterdisposal,
             ':waterflood' => $waterflood,
@@ -251,14 +258,14 @@ foreach ($inj[0] as $i){
             ':gasinj' => $gasinj,
             ':airinj' => $airinj,
             ':lpginj' => $lpginj,
-            ':daysinj' => $inja[NumberOfDaysInjected],
-            ':pinjsurf' => $inja[SurfaceInjectionPressure],
-            ':watsrc' => $inja[SourceOfWater],
-            ':watknd' => $inja[KindOfWater],
-            ':pwtstatus_i' => $inja[PWTStatus],
-            ':welltype_i' => $inja[WellType],
-            ':status_i' => $inja[Status],
-            ':poolcode_i' => $inja[PoolCode],
+            ':daysinj' => $daysinj,
+            ':pinjsurf' => $pinjsurf,
+            ':watsrc' => $watsrc,
+            ':watknd' => $watknd,
+            ':pwtstatus_i' => $pwtstatus_i,
+            ':welltype_i' => $welltype_i,
+            ':status_i' => $status_i,
+            ':poolcode_i' => $poolcode_i,
         )
     );
     echo $api.",";
