@@ -8,6 +8,8 @@
 <!- nav -><?php include('includes/nav.php');?>
 <!- nav_wx -><?php include('includes/nav_wx.php');?>
 
+<?php $utc_now = gmdate("Ymd");?>
+
 <html>
     <body>
         <h4 align=center>findu - <?php echo $callsign;?></h4>
@@ -23,6 +25,14 @@
             <tr>
                 <td width="50%"><p align=center>Wind<img width="100%" src="http://www.findu.com/cgi-bin/wind.cgi?call=<?php echo $callsign;?>&tz=480&last=120&xsize=350&ysize=200&units=english"></p></td>
                 <td width="50%"><p align=center>Temperature<img width="100%" src="http://www.findu.com/cgi-bin/temp.cgi?call=<?php echo $callsign;?>&tz=480&last=120&xsize=350&ysize=200&units=english"></p></td>
+            </tr>
+            <tr>
+                <td width="50%"><p align=center>Wind<img width="100%" src="weather.gladstonefamily.net/cgi-bin/wxqual.pl?date=<?php echo $utc_now;?>&days=14&airnow=0&asos=0&percent=5&elevation=0&site=AV359&sensor=baro></p></td>
+                <td width="50%"><p align=center>Temperature<img width="100%" src="weather.gladstonefamily.net/cgi-bin/wxqual.pl?date=<?php echo $utc_now;?>&days=14&airnow=0&asos=0&percent=5&elevation=0&site=AV359&sensor=temp"></p></td>
+            </tr>
+                        <tr>
+                <td width="50%"><p align=center>Wind<img width="100%" src="weather.gladstonefamily.net/cgi-bin/wxqual.pl?date=<?php echo $utc_now;?>&days=14&airnow=0&asos=0&percent=5&elevation=0&site=AV359&sensor=dewp"></p></td>
+                <td width="50%"><p align=center>Temperature<img width="100%" src="weather.gladstonefamily.net/cgi-bin/wxqual.pl?date=<?php echo $utc_now;?>&days=14&airnow=0&asos=0&percent=5&elevation=0&site=AV359&sensor=wspd"></p></td>
             </tr>
         </table>
     </body>
