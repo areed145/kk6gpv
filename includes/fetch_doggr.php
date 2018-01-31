@@ -12,11 +12,11 @@ if (!$con) {
 
 $query_data = "SELECT date,
                 count(api) as wells, 
-                sum(oil) as oil, 
-                sum(water) as water, 
-                sum(gas) as gas, 
-                sum(cyclic) as cyclic, 
-                sum(steamflood) as steamflood 
+                sum(oil)/30.44 as oil, 
+                sum(water)/30.44 as water, 
+                sum(gas)/30.44 as gas, 
+                sum(cyclic)/30.44 as cyclic, 
+                sum(steamflood)/30.44 as steamflood 
                 from t_doggr_prodinj 
                 WHERE 1";
 if (!empty($api)) {$query_data = $query_data . " AND api = '$api'";}
