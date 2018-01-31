@@ -6,6 +6,8 @@ var water = <?php echo '['; echo implode(', ', $water); echo ']'; ?>;
 var gas = <?php echo '['; echo implode(', ', $gas); echo ']'; ?>;
 var steamflood = <?php echo '['; echo implode(', ', $steamflood); echo ']'; ?>;
 var cyclic = <?php echo '['; echo implode(', ', $cyclic); echo ']'; ?>;
+var latall = <?php echo '['; echo implode(', ', $latall); echo ']'; ?>;
+var lonall = <?php echo '['; echo implode(', ', $lonall); echo ']'; ?>;
 var latoil = <?php echo '['; echo implode(', ', $latoil); echo ']'; ?>;
 var lonoil = <?php echo '['; echo implode(', ', $lonoil); echo ']'; ?>;
 var oilsum = <?php echo '['; echo implode(', ', $oilsum); echo ']'; ?>;
@@ -232,6 +234,22 @@ var data_map = [{
       }
     },
     name: 'Sum Oil (bbls)',
+},{
+    type: 'scattermapbox',
+    lat: latall,
+    lon: lonall,
+    mode: 'markers',
+    marker: {
+      color: '#000000',
+      colorscale: scl_oil,
+      cmin: 0,
+      cmax: 100000,
+      reversescale: false,
+      opacity: 1,
+      size: 5,
+      }
+    },
+    name: 'Wells',
 }];
 
 var layout_map = {
