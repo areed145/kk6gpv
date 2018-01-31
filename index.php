@@ -61,8 +61,8 @@
     </tr>
 </table>
 <table>
-<col style="width:40%">
-<col style="width:30%">
+<col style="width:50%">
+<col style="width:20%">
 <col style="width:30%">
   <tr>
     <td rowspan=2><p align=center>NEXRAD Radar<img width="100%" src="http://www2.findu.com/cgi-bin/radar-find.cgi?call=KK6GPV-13"></p></td>
