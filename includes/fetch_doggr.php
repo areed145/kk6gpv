@@ -61,7 +61,7 @@ $query_data = "SELECT round(latitude/$inc,0)*$inc as latitude,
                 sum(steamflood) as steamfloodsum 
                 from t_doggr_prodinj 
                 where latitude > 0 
-                AND longitude < 0"
+                AND longitude < 0";
 if (!empty($api)) {$query_data = $query_data . " AND api = '$api'";}
 if (!empty($lease)) {$query_data = $query_data . " AND lease = '$lease'";}
 if (!empty($county)) {$query_data = $query_data . " AND county = '$county'";}
