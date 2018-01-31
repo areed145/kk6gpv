@@ -33,6 +33,8 @@ if (!empty($status)) {$query_data = $query_data . " AND status = '$status'";}
 if (!empty($datemin)) {$query_data = $query_data . " AND date >= '$datemin'";}
 if (!empty($datemax)) {$query_data = $query_data . " AND date <= '$datemax'";}
 
+echo $query_data;
+
 //$query_data = "SELECT * from $doggrtable_all";
 $result = mysqli_query($con, $query_data);
 $date = array();
