@@ -10,30 +10,30 @@ if (!$con) {
     exit;
 }
 
-// $query_data = "SELECT date,
-//                 count(api) as wells, 
-//                 sum(oil) as oil, 
-//                 sum(water) as water, 
-//                 sum(gas) as gas, 
-//                 sum(cyclic) as cyclic, 
-//                 sum(steamflood) as steamflood 
-//                 from t_doggr_prodinj 
-//                 group by date
-//                 WHERE 1";
-// if (!empty($api)) {$query_data = $query_data . " AND api = '$api'";}
-// if (!empty($lease)) {$query_data = $query_data . " AND lease = '$lease'";}
-// if (!empty($county)) {$query_data = $query_data . " AND county = '$county'";}
-// if (!empty($district)) {$query_data = $query_data . " AND district = $district";}
-// if (!empty($opcode)) {$query_data = $query_data . " AND operatorcode = '$opcode'";}
-// if (!empty($fieldcode)) {$query_data = $query_data . " AND fieldcode = '$fieldcode'";}
-// if (!empty($section)) {$query_data = $query_data . " AND section = '$section'";}
-// if (!empty($township)) {$query_data = $query_data . " AND township = '$township'";}
-// if (!empty($rnge)) {$query_data = $query_data . " AND rnge = '$rnge'";}
-// if (!empty($status)) {$query_data = $query_data . " AND status = '$status'";}
-// if (!empty($datemin)) {$query_data = $query_data . " AND date >= '$datemin'";}
-// if (!empty($datemax)) {$query_data = $query_data . " AND date <= '$datemax'";}
+$query_data = "SELECT date,
+                count(api) as wells, 
+                sum(oil) as oil, 
+                sum(water) as water, 
+                sum(gas) as gas, 
+                sum(cyclic) as cyclic, 
+                sum(steamflood) as steamflood 
+                from t_doggr_prodinj 
+                group by date
+                WHERE 1";
+if (!empty($api)) {$query_data = $query_data . " AND api = '$api'";}
+if (!empty($lease)) {$query_data = $query_data . " AND lease = '$lease'";}
+if (!empty($county)) {$query_data = $query_data . " AND county = '$county'";}
+if (!empty($district)) {$query_data = $query_data . " AND district = $district";}
+if (!empty($opcode)) {$query_data = $query_data . " AND operatorcode = '$opcode'";}
+if (!empty($fieldcode)) {$query_data = $query_data . " AND fieldcode = '$fieldcode'";}
+if (!empty($section)) {$query_data = $query_data . " AND section = '$section'";}
+if (!empty($township)) {$query_data = $query_data . " AND township = '$township'";}
+if (!empty($rnge)) {$query_data = $query_data . " AND rnge = '$rnge'";}
+if (!empty($status)) {$query_data = $query_data . " AND status = '$status'";}
+if (!empty($datemin)) {$query_data = $query_data . " AND date >= '$datemin'";}
+if (!empty($datemax)) {$query_data = $query_data . " AND date <= '$datemax'";}
 
-$query_data = "SELECT * from $doggrtable_all";
+//$query_data = "SELECT * from $doggrtable_all";
 $result = mysqli_query($con, $query_data);
 $date = array();
 $wells = array();
