@@ -10,6 +10,7 @@
 <a href="wx.php?sid=KCABAKER64&period=year&<?php echo $utc_now;?>">Year</a> | 
 <a href="wx.php?sid=KCABAKER64&period=all&<?php echo $utc_now;?>">All</a> | 
 <a href="findu.php?callsign=KK6GPV-13&<?php echo $utc_now;?>">findu</a> | 
+<a href="cwop.php?callsign=AV359&<?php echo $utc_now;?>">CWOP QC</a>
 </p>
 <hr>
 </html>
