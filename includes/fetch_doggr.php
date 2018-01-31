@@ -18,7 +18,6 @@ $query_data = "SELECT date,
                 sum(cyclic) as cyclic, 
                 sum(steamflood) as steamflood 
                 from t_doggr_prodinj 
-                group by date
                 WHERE 1";
 if (!empty($api)) {$query_data = $query_data . " AND api = '$api'";}
 if (!empty($lease)) {$query_data = $query_data . " AND lease = '$lease'";}
@@ -32,6 +31,7 @@ if (!empty($rnge)) {$query_data = $query_data . " AND rnge = '$rnge'";}
 if (!empty($status)) {$query_data = $query_data . " AND status = '$status'";}
 if (!empty($datemin)) {$query_data = $query_data . " AND date >= '$datemin'";}
 if (!empty($datemax)) {$query_data = $query_data . " AND date <= '$datemax'";}
+$query_data = $query_data . " group by date"
 
 echo $query_data;
 
