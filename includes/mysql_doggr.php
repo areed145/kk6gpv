@@ -55,6 +55,7 @@ $header["operator"] = $operator[1][0];
 $header["operatorcode"] = $operator[2][0];
 $header["field"] = $field[1][0];
 $header["fieldcode"] = $field[2][0];
+
 $header["area"] = $area[1][0];
 $header["areacode"] = $area[2][0];
 $header["section"] = $section[1][0];
@@ -92,6 +93,8 @@ if($header["gissrc"] == ''){$header["gissrc"] = 'null';}
 if($header["elev"] == ''){$header["elev"] = -999;}
 if($header["latitude"] == ''){$header["latitude"] = 0;}
 if($header["longitude"] == ''){$header["longitude"] = 0;}
+
+echo "api, lease, well, county, district, operator, operatorcode, field, fieldcode, area, areacode, section, township, rnge, bm, wellstatus, gissrc, elev, latitude, longitude, date, oil, water, gas, daysprod, oilgrav, pcsg, ptbg, btu, method, waterdisp, pwt_status_p, welltype_p, status_p, poolcode_p<br>";
 
 $query_p = "INSERT INTO $doggrtable_prodinj
     (api, lease, well, county, district, operator, operatorcode, field, fieldcode, area, areacode, section, township, rnge, bm, wellstatus, gissrc, elev, latitude, longitude, date, oil, water, gas, daysprod, oilgrav, pcsg, ptbg, btu, method, waterdisp, pwtstatus_p, welltype_p, status_p, poolcode_p) 
@@ -179,6 +182,8 @@ foreach ($prod[0] as $p){
     echo $proda[PoolCode].",";
     echo "<br>";
 }
+
+echo "api, lease, well, county, district, operator, operatorcode, field, fieldcode, area, areacode, section, township, rnge, bm, wellstatus, gissrc, elev, latitude, longitude, date, waterdisposal, waterflood, steamflood, cyclic, gasinj, airinj, lpginj, daysinj, pinjsurf, watsrc, watknd, pwt_status_i, welltype_i, status_i, poolcode_i<br>";
 
 $query_i = "INSERT INTO $doggrtable_prodinj
     (api, lease, well, county, district, operator, operatorcode, field, fieldcode, area, areacode, section, township, rnge, bm, wellstatus, gissrc, elev, latitude, longitude, date, waterdisposal, waterflood, steamflood, cyclic, gasinj, airinj, lpginj, daysinj, pinjsurf, watsrc, watknd, pwtstatus_i, welltype_i, status_i, poolcode_i) 
