@@ -117,7 +117,7 @@ $data = [ [
    "cylic" => $cyclic
 ] ];
 $json = json_encode($data);
-echo $json
+echo $json;
 
 //print '<pre>' . htmlspecialchars(print_r(get_defined_vars(), true)) . '</pre>';
 
