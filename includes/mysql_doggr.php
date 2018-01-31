@@ -81,80 +81,116 @@ foreach ($prod[0] as $p){
     preg_match("/\/Date\((.*)\)/", $proda[ProductionDate], $date);
     $datestr = substr($date[1],0, -3);
     $date = gmdate("Y-m-d", $datestr);
+    if ($header[apinum] == '') {$apinum = $header["apinum"];} else {$apinum = 'null';}
+    if ($header[lease] == '') {$lease = $header["lease"];} else {$lease = 'null';}
+    if (empty($header[well])) {$well = $header["well"];} else {$well = 'null';}
+    if (empty($header[county])) {$county = $header["county"];} else {$county = 'null';}
+    if (empty($header[countycode])) {$countycode = $header["countycode"];} else {$countycode = 'null';}
+    if (empty($header[district])) {$district = $header["district"];} else {$district = -99;}
+    if (empty($header[operator])) {$operator = $header["operator"];} else {$operator = 'null';}
+    if (empty($header[operatorcode])) {$operatorcode = $header["operatorcode"];} else {$operatorcode = 'null';}
+    if (empty($header[field])) {$field = $header["field"];} else {$field = 'null';}
+    if (empty($header[fieldcode])) {$fieldcode = $header["fieldcode"];} else {$fieldcode = 'null';}
+    if (empty($header[area])) {$area = $header["area"];} else {$area = 'null';}
+    if (empty($header[areacode])) {$areacode = $header["areacode"];} else {$areacode = 'null';}
+    if (empty($header[section])) {$section = $header["section"];} else {$section = 'null';}
+    if (empty($header[township])) {$township = $header["township"];} else {$township = 'null';}
+    if (empty($header[rnge])) {$rnge = $header["rnge"];} else {$rnge = 'null';}
+    if (empty($header[bm])) {$bm = $header["bm"];} else {$bm = 'null';}
+    if (empty($header[wellstatus])) {$wellstatus = $header["wellstatus"];} else {$wellstatus = 'null';}
+    if (empty($header[pwt])) {$pwt = $header["pwt"];} else {$pwt = 'null';}
+    if (empty($header[spuddate])) {$spuddate = $header["spuddate"];} else {$spuddate = 'null';}
+    if (empty($header[gissrc])) {$gissrc = $header["gissrc"];} else {$gissrc = 'null';}
+    if (empty($header[elev])) {$elev = $header["elev"];} else {$elev = 'null';}
+    if (empty($header[latitude])) {$latitude = $header["latitude"];} else {$latitude = 'null';}
+    if (empty($header[longitude])) {$longitude = $header["longitude"];} else {$longitude = 'null';}
+    if (empty($proda[OilProduced])) {$oil = 0 ;} else {$oil = $proda[OilProduced];}
+    if (empty($proda[WaterProduced])) {$water = 0 ;} else {$water = $proda[WaterProduced];}
+    if (empty($proda[GasProduced])) {$gas = 0 ;} else {$gas = $proda[GasProduced];}
+    if (empty($proda[NumberOfDaysInjected])) {$daysprod = 'null';} else {$daysprod = $proda[NumberOfDaysInjected];}
+    if (empty($proda[OilGravity])) {$psurfinj = 'null';} else {$psurfinj = $proda[SurfaceInjectionPressure];}
+    if (empty($proda[CasingPressure]))  {$watsrc = 'null';} else {$watsrc = $proda[CasingPressure];}
+    if (empty($proda[TubingPressure])) {$watknd = 'null';} else {$watknd =  $proda[TubingPressure];}
+    if (empty($proda[BTU])) {$watknd = 'null';} else {$watknd =  $proda[BTU];}
+    if (empty($proda[MethodOfOperation])) {$watknd = 'null';} else {$watknd =  $proda[MethodOfOperation];}
+    if (empty($proda[WaterDisposition])) {$watknd = 'null';} else {$watknd =  $proda[WaterDisposition];}
+    if (empty($proda[PWTStatus])) {$pwtstatus_p = 'null';} else {$pwtstatus_p = $proda[PWTStatus];}
+    if (empty($proda[Status])) {$status_p = 'null';} else {$status_p = $proda[Status];}
+    if (empty($proda[PoolCode])) {$poolcode_p = 'null';} else {$poolcode_p = $proda[PoolCode];}
     $statement_p->execute(
         array(
             ':api' => $api,
-            ':lease' => $header[lease],
-            ':well' => $header[well],
-            ':county' => $header[county],
-            ':district' => $header[district],
-            ':operator' => $header[operator],
-            ':operatorcode' => $header[operatorcode],
-            ':field' => $header[field],
-            ':fieldcode' => $header[fieldcode],
-            ':area' => $header[area],
-            ':areacode' => $header[areacode],
-            ':section' => $header[section],
-            ':township' => $header[township],
-            ':rnge' => $header[rnge],
-            ':bm' => $header[bm],
-            ':wellstatus' => $header[wellstatus],
-            ':gissrc' => $header[gissrc],
-            ':elev' => $header[elev],
-            ':latitude' => $header[latitude],
-            ':longitude' => $header[longitude],
+            ':lease' => $lease,
+            ':well' => $well,
+            ':county' => $county,
+            ':district' => $district,
+            ':operator' => $operator,
+            ':operatorcode' => $operatorcode,
+            ':field' => $field,
+            ':fieldcode' => $fieldcode,
+            ':area' => $area,
+            ':areacode' => $areacode,
+            ':section' => $section,
+            ':township' => $township,
+            ':rnge' => $rnge,
+            ':bm' => $bm,
+            ':wellstatus' => $wellstatus,
+            ':gissrc' => $gissrc,
+            ':elev' => $elev,
+            ':latitude' => $latitude,
+            ':longitude' => $longitude,
             ':date' => $date,
-            ':oil' => $proda[OilProduced],
-            ':water' => $proda[WaterProduced],
-            ':gas' => $proda[GasProduced],
-            ':daysprod' => $proda[NumberOfDaysProduced],
-            ':oilgrav' => $proda[OilGravity],
-            ':pcsg' => $proda[CasingPressure],
-            ':ptbg' => $proda[TubingPressure],
-            ':btu' => $proda[BTU],
-            ':method' => $proda[MethodOfOperation],
-            ':waterdisp' => $proda[WaterDisposition],
-            ':pwtstatus_p' => $proda[PWTStatus],
-            ':welltype_p' => $proda[WellType],
-            ':status_p' => $proda[Status],
-            ':poolcode_p' => $proda[PoolCode],
+            ':oil' => $oil,
+            ':water' => $water,
+            ':gas' => $gas,
+            ':daysprod' => $daysprod,
+            ':oilgrav' => $oilgrav,
+            ':pcsg' => $pcsg,
+            ':ptbg' => $ptbg,
+            ':btu' => $btu,
+            ':method' => $method,
+            ':waterdisp' => $waterdisp,
+            ':pwtstatus_p' => $pwtstatus_p,
+            ':welltype_p' => $welltype_p,
+            ':status_p' => $status_p,
+            ':poolcode_p' => $poolcode_p,
         )
     );
     echo $api.",";
-    echo $header[lease].",";
-    echo $header[well].",";
-    echo $header[county].",";
-    echo $header[district].",";
-    echo $header[operator].",";
-    echo $header[operatorcode].",";
-    echo $header[field].",";
-    echo $header[fieldcode].",";
-    echo $header[area].",";
-    echo $header[areacode].",";
-    echo $header[section].",";
-    echo $header[township].",";
-    echo $header[rnge].",";
-    echo $header[bm].",";
-    echo $header[wellstatus].",";
-    echo $header[gissrc].",";
-    echo $header[elev].",";
-    echo $header[latitude].",";
-    echo $header[longitude].",";
+    echo $lease.",";
+    echo $well.",";
+    echo $county.",";
+    echo $district.",";
+    echo $operator.",";
+    echo $operatorcode.",";
+    echo $field.",";
+    echo $fieldcode.",";
+    echo $area.",";
+    echo $areacode.",";
+    echo $section.",";
+    echo $township.",";
+    echo $rnge.",";
+    echo $bm.",";
+    echo $wellstatus.",";
+    echo $gissrc.",";
+    echo $elev.",";
+    echo $latitude.",";
+    echo $longitude.",";
     echo $date.",";
-    echo $proda[OilProduced].",";
-    echo $proda[WaterProduced].",";
-    echo $proda[GasProduced].",";
-    echo $proda[NumberOfDaysProduced].",";
-    echo $proda[OilGravity].",";
-    echo $proda[CasingPressure].",";
-    echo $proda[TubingPressure].",";
-    echo $proda[BTU].",";
-    echo $proda[MethodOfOperation].",";
-    echo $proda[WaterDisposition].",";
-    echo $proda[PWTStatus].",";
-    echo $proda[WellType].",";
-    echo $proda[Status].",";
-    echo $proda[PoolCode].",";
+    echo $oil.",";
+    echo $water.",";
+    echo $gas.",";
+    echo $daysprod.",";
+    echo $oilgrav.",";
+    echo $pcsg.",";
+    echo $ptbg.",";
+    echo $btu.",";
+    echo $method.",";
+    echo $waterdisp.",";
+    echo $pwtstatus_p.",";
+    echo $welltype_p.",";
+    echo $status_p.",";
+    echo $poolcode_p.",";
     echo "<br>";
 }
 
@@ -227,7 +263,6 @@ foreach ($inj[0] as $i){
     if (empty($inja[PWTStatus])) {$pwtstatus_i = 'null';} else {$pwtstatus_i= $inja[PWTStatus];}
     if (empty($inja[Status])) {$status_i = 'null';} else {$status_i = $inja[Status];}
     if (empty($inja[PoolCode])) {$poolcode_i = 'null';} else {$poolcode_i = $inja[PoolCode];}
-    
     $statement_i->execute(
         array(
             ':api' => $api,
@@ -269,25 +304,25 @@ foreach ($inj[0] as $i){
         )
     );
     echo $api.",";
-    echo $header[lease].",";
-    echo $header[well].",";
-    echo $header[county].",";
-    echo $header[district].",";
-    echo $header[operator].",";
-    echo $header[operatorcode].",";
-    echo $header[field].",";
-    echo $header[fieldcode].",";
-    echo $header[area].",";
-    echo $header[areacode].",";
-    echo $header[section].",";
-    echo $header[township].",";
-    echo $header[rnge].",";
-    echo $header[bm].",";
-    echo $header[wellstatus].",";
-    echo $header[gissrc].",";
-    echo $header[elev].",";
-    echo $header[latitude].",";
-    echo $header[longitude].",";
+    echo $lease.",";
+    echo $well.",";
+    echo $county.",";
+    echo $district.",";
+    echo $operator.",";
+    echo $operatorcode.",";
+    echo $field.",";
+    echo $fieldcode.",";
+    echo $area.",";
+    echo $areacode.",";
+    echo $section.",";
+    echo $township.",";
+    echo $rnge.",";
+    echo $bm.",";
+    echo $wellstatus.",";
+    echo $gissrc.",";
+    echo $elev.",";
+    echo $latitude.",";
+    echo $longitude.",";
     echo $date.",";
     echo $waterdisposal.",";
     echo $waterflood.",";
@@ -296,14 +331,14 @@ foreach ($inj[0] as $i){
     echo $gasinj.",";
     echo $airinj.",";
     echo $lpginj.",";
-    echo $proda[NumberOfDaysInjected].",";
-    echo $proda[SurfaceInectionPressure].",";
-    echo $proda[SourceOfWater].",";
-    echo $proda[KindOfWater].",";
-    echo $proda[PWTStatus].",";
-    echo $proda[WellType].",";
-    echo $proda[Status].",";
-    echo $proda[PoolCode].",";
+    echo $daysinj.",";
+    echo $psurfinj.",";
+    echo $watsrc.",";
+    echo $watknd.",";
+    echo $pwtstatus_p.",";
+    echo $welltype_p.",";
+    echo $status_p.",";
+    echo $poolcode_p.",";
     echo "<br>";
 }
 
