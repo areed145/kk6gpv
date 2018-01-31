@@ -31,7 +31,7 @@ if (!empty($rnge)) {$query_data = $query_data . " AND rnge = '$rnge'";}
 if (!empty($status)) {$query_data = $query_data . " AND status = '$status'";}
 if (!empty($datemin)) {$query_data = $query_data . " AND date >= '$datemin'";}
 if (!empty($datemax)) {$query_data = $query_data . " AND date <= '$datemax'";}
-$query_data = $query_data . " group by date"
+$query_data = $query_data . " group by date";
 
 echo $query_data;
 
