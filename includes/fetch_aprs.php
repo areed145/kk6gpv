@@ -33,9 +33,9 @@ if (!$con) {
     exit;
 }
 
-$query_start = "SELECT min(date(timestamp)) - interval $offset hour AS start
+$query_start = "SELECT min(date(timestamp)) AS start
                 FROM $aprstable
-                WHERE (date(timestamp) - interval $offset hour between '$start' and '$end')";
+                WHERE date(timestamp) between '$start' and '$end'";
 $result = mysqli_query($con, $query_start);
 $row =  mysqli_fetch_assoc($result);
 $startu = $row['start'];
@@ -48,7 +48,7 @@ $query_data = "SELECT timestamp - interval $offset hour as timestamp,
                 speed,
                 altitude
                 FROM $aprstable
-                WHERE (date(timestamp) - interval $offset hour between '$start' and '$end')
+                WHERE timestamp - interval $offset hour between '$start' and '$end'
                 ORDER BY timestamp ASC";
 $result = mysqli_query($con, $query_data);
 $timestamp = array();
