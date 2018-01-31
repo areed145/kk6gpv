@@ -1,32 +1,28 @@
 <?php
-
+$offset = 8;
+$now = gmdate("Y-m-d H:i:s");
+$now_l = gmdate("Y-m-d",strtotime($now . "-$offset hours"));
+$end = gmdate("Y-m-d",strtotime($now_l . '+1 days'));
 if ($period == 'today') {
-    $start = gmdate("Y-m-d"); 
-    $end = gmdate("Y-m-d",strtotime('+1 days')); 
+    $start = gmdate("Y-m-d",strtotime($now_l));
 }
 elseif ($period == 'week') {
-    $start = gmdate("Y-m-d",strtotime('-1 week')); 
-    $end = gmdate("Y-m-d",strtotime('+1 days')); 
+    $start = gmdate("Y-m-d",strtotime($end . '-1 week'));
 }
 elseif ($period == 'month') {
-    $start = gmdate("Y-m-d",strtotime('-1 month')); 
-    $end = gmdate("Y-m-d",strtotime('+1 days')); 
+    $start = gmdate("Y-m-d",strtotime($end . '-1 month'));
 }
 elseif ($period == '3month') {
-    $start = gmdate("Y-m-d",strtotime('-3 month')); 
-    $end = gmdate("Y-m-d",strtotime('+1 days')); 
+    $start = gmdate("Y-m-d",strtotime($end . '-3 months'));
 }
 elseif ($period == '6month') {
-    $start = gmdate("Y-m-d",strtotime('-6 month')); 
-    $end = gmdate("Y-m-d",strtotime('+1 days')); 
+    $start = gmdate("Y-m-d",strtotime($end . '-6 months'));
 }
 elseif ($period == 'year') {
-    $start = gmdate("Y-m-d",strtotime('-1 year')); 
-    $end = gmdate("Y-m-d",strtotime('+1 days')); 
+    $start = gmdate("Y-m-d",strtotime($end . '-1 year'));
 }
 else {
-    $start = gmdate("Y-m-d",strtotime('-10 years'));
-    $end = gmdate("Y-m-d",strtotime('+1 days'));
+    $start = gmdate("Y-m-d",strtotime($end . '-10 years'));
 };
 
 $con = mysqli_connect($databasehost, $databaseusername, $databasepassword, $databasename);
