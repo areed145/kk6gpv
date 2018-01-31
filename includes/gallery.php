@@ -20,7 +20,7 @@
     </td>
 	<td width="25%">
     	<div class="gimg"><a href="https://www.flickr.com/photos/adamreeder/albums/72157673937679411">
-		<img border=0 width="100%" src="https://farm1.staticflickr.com/646/22666026451_2a23c6ef1d_m_d.jpg"></a>
+		<img border=0 width="100%" src="https://farm1.staticflickr.com/646/22666026451_bc2a8a1b8d_m_d.jpg"></a>
         <gtxt align=center style='text-align:center'><span>Soaring</span></gtxt></div>
     </td>
   </tr>
