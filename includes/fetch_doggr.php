@@ -52,71 +52,89 @@ while($row = mysqli_fetch_assoc($result)){
     $cyclic[] = $row['cyclic'];
 }
 
-$query = "SELECT latitude, longitude, oilsum from $doggrtable_map where oilsum > 0";
-$result = mysqli_query($con, $query);
+$query_data = "SELECT round(latitude/$inc,0)*$inc as latitude, 
+                round(longitude/$inc,0)*$inc as longitude, 
+                sum(oil) as oilsum, 
+                sum(water) as watersum, 
+                sum(gas) as gassum, 
+                sum(cyclic) as cyclicsum, 
+                sum(steamflood) as steamfloodsum 
+                from t_doggr_prodinj 
+                where latitude > 0 
+                AND longitude < 0"
+if (!empty($api)) {$query_data = $query_data . " AND api = '$api'";}
+if (!empty($lease)) {$query_data = $query_data . " AND lease = '$lease'";}
+if (!empty($county)) {$query_data = $query_data . " AND county = '$county'";}
+if (!empty($district)) {$query_data = $query_data . " AND district = $district";}
+if (!empty($opcode)) {$query_data = $query_data . " AND operatorcode = '$opcode'";}
+if (!empty($fieldcode)) {$query_data = $query_data . " AND fieldcode = '$fieldcode'";}
+if (!empty($section)) {$query_data = $query_data . " AND section = '$section'";}
+if (!empty($township)) {$query_data = $query_data . " AND township = '$township'";}
+if (!empty($rnge)) {$query_data = $query_data . " AND rnge = '$rnge'";}
+if (!empty($status)) {$query_data = $query_data . " AND status = '$status'";}
+if (!empty($datemin)) {$query_data = $query_data . " AND date >= '$datemin'";}
+if (!empty($datemax)) {$query_data = $query_data . " AND date <= '$datemax'";}
+$query_data = $query_data . " group by round(latitude/$inc,0)*$inc, round(longitude/$inc,0)*$inc";
+
+//$query = "SELECT latitude, longitude, oilsum from $doggrtable_map";
+$result = mysqli_query($con, $query_data);
+$latall = array();
+$lonall = array();
 $latoil = array();
 $lonoil = array();
 $oilsum = array();
-while($row = mysqli_fetch_assoc($result)){
-    $latoil[] = $row['latitude'];
-    $lonoil[] = $row['longitude'];
-    $oilsum[] = $row['oilsum'];
-}
-
-$query = "SELECT latitude, longitude, watersum from $doggrtable_map where watersum > 0";
-$result = mysqli_query($con, $query);
 $latwater = array();
 $lonwater = array();
 $watersum = array();
-while($row = mysqli_fetch_assoc($result)){
-    $latwater[] = $row['latitude'];
-    $lonwater[] = $row['longitude'];
-    $watersum[] = $row['watersum'];
-}
-
-$query = "SELECT latitude, longitude, gassum from $doggrtable_map where gassum > 0";
-$result = mysqli_query($con, $query);
 $latgas = array();
 $longas = array();
 $gassum = array();
-while($row = mysqli_fetch_assoc($result)){
-    $latgas[] = $row['latitude'];
-    $longas[] = $row['longitude'];
-    $gassum[] = $row['gassum'];
-}
-
-$query = "SELECT latitude, longitude, cyclicsum from $doggrtable_map where cyclicsum > 0";
-$result = mysqli_query($con, $query);
 $latcyclic = array();
 $loncyclic = array();
 $cyclicsum = array();
-while($row = mysqli_fetch_assoc($result)){
-    $latcyclic[] = $row['latitude'];
-    $loncyclic[] = $row['longitude'];
-    $cyclicsum[] = $row['cyclicsum'];
-}
-
-$query = "SELECT latitude, longitude, steamfloodsum from $doggrtable_map where steamfloodsum > 0";
-$result = mysqli_query($con, $query);
 $latsteamflood = array();
 $lonsteamflood = array();
 $steamfloodsum = array();
 while($row = mysqli_fetch_assoc($result)){
-    $latsteamflood[] = $row['latitude'];
-    $lonsteamflood[] = $row['longitude'];
-    $steamfloodsum[] = $row['steamfloodsum'];
+    $latall[] = $row['latitude'];
+    $lonall[] = $row['longitude'];
+    if($row['oilsum']>0){
+        $latoil[] = $row['latitude'];
+        $lonoil[] = $row['longitude'];
+        $oilsum[] = $row['oilsum'];
+    }
+    if($row['watersum']>0){
+        $latwater[] = $row['latitude'];
+        $lonwater[] = $row['longitude'];
+        $watersum[] = $row['watersum'];
+    }
+    if($row['gassum']>0){
+        $latgas[] = $row['latitude'];
+        $longas[] = $row['longitude'];
+        $gassum[] = $row['gassum'];
+    }
+    if($row['cyclicsum']>0){
+        $latcyclic[] = $row['latitude'];
+        $loncyclic[] = $row['longitude'];
+        $cyclicsum[] = $row['cyclicsum'];
+    }
+    if($row['steamfloodsum']>0){
+        $latsteamflood[] = $row['latitude'];
+        $lonsteamflood[] = $row['longitude'];
+        $steamfloodsum[] = $row['steamfloodsum'];
+    }
 }
 
-$data = [ [
-   "date" => $date,
-   "wells" => $wells,
-   "oil" => $oil,
-   "water" => $water,
-   "gas" => $gas,
-   "steamflood" => $steamflood,
-   "cylic" => $cyclic
-] ];
-$json = json_encode($data);
+// $data = [ [
+//    "date" => $date,
+//    "wells" => $wells,
+//    "oil" => $oil,
+//    "water" => $water,
+//    "gas" => $gas,
+//    "steamflood" => $steamflood,
+//    "cylic" => $cyclic
+// ] ];
+// $json = json_encode($data);
 
 //echo $json;
 
