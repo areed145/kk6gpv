@@ -1,6 +1,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-<!- GETS -><?php $period = $_GET["period"]; $sid = $_GET["sid"]; ?>
+<!- GETS -><?php
+if (isset($_GET["period"])){$period = $_GET["period"];}
+if (isset($_GET["sid"])){$sid = $_GET["sid"];}
+?>
 <!– style –><?php include('includes/style.php');?>
 <!– mysql_cred –><?php include('includes/mysql_cred.php');?>
 <!– fetch_wx –><?php include('includes/fetch_wx.php');?>

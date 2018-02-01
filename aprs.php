@@ -1,6 +1,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-<!- GETS -><?php $period = $_GET["period"] ?>
+<!- GETS -><?php
+if (isset($_GET["period"])){$period = $_GET["period"];}
+?>
 <!– style –><?php include('includes/style.php');?>
 <!– mysql_cred –><?php include('includes/mysql_cred.php');?>
 <!– fetch_aprs –><?php include('includes/fetch_aprs.php');?>

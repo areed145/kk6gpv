@@ -1,6 +1,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-<!- GETS -><?php $data = $_GET["data"]; $min = $_GET["min"]; $max = $_GET["max"];?>
+<!- GETS -><?php
+if (isset($_GET["data"])){$data = $_GET["data"];}
+if (isset($_GET["min"])){$min = $_GET["min"];}
+if (isset($_GET["max"])){$max = $_GET["max"];}
+?>
 <!– style –><?php include('includes/style.php');?>
 <!– mysql_cred –><?php include('includes/mysql_cred.php');?>
 <!– fetch_aws –><?php include('includes/fetch_aws.php');?>
