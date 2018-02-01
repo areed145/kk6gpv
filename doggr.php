@@ -4,7 +4,7 @@
 if (isset($_GET["inc"])) {$inc = $_GET["inc"];}
 if (isset($_GET["api"])) {$api = $_GET["api"];}
 if (isset($_GET["lease"])) {$lease = $_GET["lease"];}
-if (isset($_GET["county"])) {$county = $_GET["county"];
+if (isset($_GET["county"])) {$county = $_GET["county"];}
 if (isset($_GET["district"])) {$district = $_GET["district"];}
 if (isset($_GET["opcode"])) {$opcode = $_GET["opcode"];}
 if (isset($_GET["fieldcode"])) {$fieldcode = $_GET["fieldcode"];}
