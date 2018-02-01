@@ -176,10 +176,10 @@ foreach ($prod[0] as $p){
         if ($proda[WaterProduced] != '') {$water = $proda[WaterProduced];} else {$water = 0;} 
         if ($proda[GasProduced] != '') {$gas = $proda[GasProduced];} else {$gas = 0;}
         if ($proda[NumberOfDaysProduced] != '') {$daysprod = $proda[NumberOfDaysProduced];} else {$daysprod = 0;}
-        if ($proda[OilGravity] != '') {$oilgrav = $proda[OilGravity];} else {$oilgrav = 'null';}
-        if ($proda[CasingPressure] != '')  {$pcsg = $proda[CasingPressure];} else {$pcsg = 'null';}
-        if ($proda[TubingPressure] != '') {$ptbg = $proda[TubingPressure];} else {$ptbg = 'null';} 
-        if ($proda[BTU] != '') {$btu = $proda[BTU];} else {$btu = 'null';}
+        if ($proda[OilGravity] != '') {$oilgrav = $proda[OilGravity];} else {$oilgrav = -99;}
+        if ($proda[CasingPressure] != '')  {$pcsg = $proda[CasingPressure];} else {$pcsg = -99;}
+        if ($proda[TubingPressure] != '') {$ptbg = $proda[TubingPressure];} else {$ptbg = -99;} 
+        if ($proda[BTU] != '') {$btu = $proda[BTU];} else {$btu = -99;}
         if ($proda[MethodOfOperation] != '') {$method = $proda[MethodOfOperation];} else {$method = 'null';}
         if ($proda[WaterDisposition] != '') {$waterdisp = $proda[WaterDisposition];} else {$waterdisp = 'null';}
         if ($proda[PWTStatus] != '') {$pwtstatus_p = $proda[PWTStatus];} else {$pwtstatus_p = 'null';}
@@ -268,11 +268,11 @@ echo "<br>api, lease, well, county, district, operator, operatorcode, field, fie
 $query_i = "INSERT INTO $doggrtable_prodinj 
     (api, lease, well, county, district, operator, operatorcode, field, fieldcode, area, areacode, section, township, rnge, bm, wellstatus, gissrc, elev, latitude, longitude, date, waterdisposal, waterflood, steamflood, cyclic, gasinj, airinj, lpginj, daysinj, pinjsurf, watsrc, watknd, pwtstatus_i, welltype_i, status_i, poolcode_i) 
     VALUES(:api, :lease, :well, :county, :district, :operator, :operatorcode, :field, :fieldcode, :area, :areacode, :section, :township, :rnge, :bm, :wellstatus, :gissrc, :elev, :latitude, :longitude, :date, :waterdisposal, :waterflood, :steamflood, :cyclic, :gasinj, :airinj, :lpginj, :daysinj, :pinjsurf, :watsrc, :watknd, :pwtstatus_i, :welltype_i, :status_i, :poolcode_i) 
-    ON DUPLICATE KEY UPDATE
+    ON DUPLICATE KEY UPDATE 
     waterdisposal = :waterdisposal, 
     waterflood = :waterflood, 
-    steamflood = :steamflood,
-    cyclic = :cyclic,
+    steamflood = :steamflood, 
+    cyclic = :cyclic, 
     gasinj = :gasinj, 
     airinj = :airinj, 
     lpginj = :lpginj, 
@@ -325,7 +325,7 @@ foreach ($inj[0] as $i){
         if ($inja[WellType] == 'GD') {$airinj =  $inja[GasOrAirInjected];} else {$airinj = 0;}
         if ($inja[WellType] == 'LG') {$lpginj =  $inja[WaterOrSteamInjected];} else {$lpginj = 0;}
         if ($inja[NumberOfDaysInjected] != '') {$daysinj = $inja[NumberOfDaysInjected];} else {$daysinj = 0;}
-        if ($inja[SurfaceInjectionPressure] != '') {$psurfinj = $inja[SurfaceInjectionPressure];} else {$psurfinj = 'null';}
+        if ($inja[SurfaceInjectionPressure] != '') {$psurfinj = $inja[SurfaceInjectionPressure];} else {$psurfinj = -99;}
         if ($inja[SourceOfWater] != '')  {$watsrc = $inja[SourceOfWater];} else {$watsrc = 'null';}
         if ($inja[KindOfWater] != '') {$watknd =  $inja[KindOfWater];} else {$watknd = 'null';}
         if ($inja[PWTStatus] != '') {$pwtstatus_i= $inja[PWTStatus];} else {$pwtstatus_i = 'null';}
@@ -404,10 +404,10 @@ foreach ($inj[0] as $i){
         echo $psurfinj.",";
         echo $watsrc.",";
         echo $watknd.",";
-        echo $pwtstatus_p.",";
-        echo $welltype_p.",";
-        echo $status_p.",";
-        echo $poolcode_p;
+        echo $pwtstatus_i.",";
+        echo $welltype_i.",";
+        echo $status_i.",";
+        echo $poolcode_i;
         echo "<br>";
     }
 }
