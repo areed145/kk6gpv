@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
 
 $c = "KK6GPV";
 $h = $_GET["hours"];

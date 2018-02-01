@@ -1,5 +1,7 @@
 <?php
+error_reporting(0);
 set_time_limit(240);
+
 include('mysql_cred.php');
 
 $type = $_GET["type"];

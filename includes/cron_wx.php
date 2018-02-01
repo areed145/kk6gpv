@@ -1,4 +1,6 @@
 <?php
+error_reporting(0);
+
 $sid = 'KCABAKER64';
 $end = date("Y-m-d",strtotime('+2 days'));
 $beg = date("Y-m-d",strtotime('-3 days'));

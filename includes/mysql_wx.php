@@ -1,4 +1,6 @@
 <?php
+error_reporting(0);
+
 include('mysql_cred.php');
 
 $sid = $_GET["sid"];

@@ -1,4 +1,6 @@
 <?php
+error_reporting(0);
+
 $sid = $_GET["sid"];
 $beg = $_GET["beg"];
 $end = $_GET["end"];
