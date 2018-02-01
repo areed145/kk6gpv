@@ -1,19 +1,19 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <!– GETS –><?php 
-if (isset($_GET["inc"])){$inc = $_GET["inc"];}
-if (isset($_GET["api"])){$api= $_GET["api"];}
-if (isset($_GET["lease"])){$lease= $_GET["lease"];}
-if (isset($_GET["county"])){$county = $_GET["county"];
-if (isset($_GET["district"])){$sid = $district = $_GET["district"];}
-if (isset($_GET["opcode"])){$opcode = $_GET["opcode"];}
-if (isset($_GET["fieldcode"])){$fieldcode = $_GET["fieldcode"];}
-if (isset($_GET["section"])){$section = $_GET["section"];}
-if (isset($_GET["township"])){$township = $_GET["township"];}
-if (isset($_GET["rnge"])){$rnge = $_GET["rnge"];}
-if (isset($_GET["status"])){$status = $_GET["status"];}
-if (isset($_GET["datemin"])){$datemin = $_GET["datemin"];}
-if (isset($_GET["datemax"])){$datemax = $_GET["datemax"];}
+if (isset($_GET["inc"])) {$inc = $_GET["inc"];}
+if (isset($_GET["api"])) {$api = $_GET["api"];}
+if (isset($_GET["lease"])) {$lease = $_GET["lease"];}
+if (isset($_GET["county"])) {$county = $_GET["county"];
+if (isset($_GET["district"])) {$district = $_GET["district"];}
+if (isset($_GET["opcode"])) {$opcode = $_GET["opcode"];}
+if (isset($_GET["fieldcode"])) {$fieldcode = $_GET["fieldcode"];}
+if (isset($_GET["section"])) {$section = $_GET["section"];}
+if (isset($_GET["township"])) {$township = $_GET["township"];}
+if (isset($_GET["rnge"])) {$rnge = $_GET["rnge"];}
+if (isset($_GET["status"])) {$status = $_GET["status"];}
+if (isset($_GET["datemin"])) {$datemin = $_GET["datemin"];}
+if (isset($_GET["datemax"])) {$datemax = $_GET["datemax"];}
 ?>
 
 <!– style –><?php include('includes/style.php');?>
