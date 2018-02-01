@@ -69,6 +69,80 @@ $header["elev"] = $elev[1][0];
 $header["latitude"] = $latitude[1][0];
 $header["longitude"] = $longitude[1][0];
 
+echo "api, lease, well, county, district, operator, operatorcode, field, fieldcode, area, areacode, section, township, rnge, bm, wellstatus, gissrc, elev, latitude, longitude<br>";
+$query_h = "INSERT INTO $doggrtable_prodinj
+    (api, lease, well, county, district, operator, operatorcode, field, fieldcode, area, areacode, section, township, rnge, bm, wellstatus, gissrc, elev, latitude, longitude) 
+    VALUES(:api, :lease, :well, :county, :district, :operator, :operatorcode, :field, :fieldcode, :area, :areacode, :section, :township, :rnge, :bm, :wellstatus, :gissrc, :elev, :latitude, :longitude);";
+$statement_h = $connect->prepare($query_h);
+if ($header[apinum] != '') {$apinum = $header["apinum"];} else {$apinum = 'null';}
+if ($header[lease] != '') {$lease = $header["lease"];} else {$lease = 'null';}
+if ($header[well] != '') {$well = $header["well"];} else {$well = 'null';}
+if ($header[county] != '') {$county = $header["county"];} else {$county = 'null';}
+if ($header[countycode] != '') {$countycode = $header["countycode"];} else {$countycode = 'null';}
+if ($header[district] != '') {$district = $header["district"];} else {$district = -99;}
+if ($header[operator] != '') {$operator = $header["operator"];} else {$operator = 'null';}
+if ($header[operatorcode] != '') {$operatorcode = $header["operatorcode"];} else {$operatorcode = 'null';}
+if ($header[field] != '') {$field = $header["field"];} else {$field = 'null';}
+if ($header[fieldcode] != '') {$fieldcode = $header["fieldcode"];} else {$fieldcode = 'null';}
+if ($header[area] != '') {$area = $header["area"];} else {$area = 'null';}
+if ($header[areacode] != '') {$areacode = $header["areacode"];} else {$areacode = 'null';}
+if ($header[section] != '') {$section = $header["section"];} else {$section = 'null';}
+if ($header[township] != '') {$township = $header["township"];} else {$township = 'null';}
+if ($header[rnge] != '') {$rnge = $header["rnge"];} else {$rnge = 'null';}
+if ($header[bm] != '') {$bm = $header["bm"];} else {$bm = 'null';}
+if ($header[wellstatus] != '') {$wellstatus = $header["wellstatus"];} else {$wellstatus = 'null';}
+if ($header[pwt] != '') {$pwt = $header["pwt"];} else {$pwt = 'null';}
+if ($header[spuddate] != '') {$spuddate = $header["spuddate"];} else {$spuddate = 'null';}
+if ($header[gissrc] != '') {$gissrc = $header["gissrc"];} else {$gissrc = 'null';}
+if ($header[elev] != '') {$elev = $header["elev"];} else {$elev = -99;}
+if ($header[latitude] != '') {$latitude = $header["latitude"];} else {$latitude = -99;}
+if ($header[longitude] != '') {$longitude = $header["longitude"];} else {$longitude = -99;}
+$statement_p->execute(
+    array(
+        ':api' => $api,
+        ':lease' => $lease,
+        ':well' => $well,
+        ':county' => $county,
+        ':district' => $district,
+        ':operator' => $operator,
+        ':operatorcode' => $operatorcode,
+        ':field' => $field,
+        ':fieldcode' => $fieldcode,
+        ':area' => $area,
+        ':areacode' => $areacode,
+        ':section' => $section,
+        ':township' => $township,
+        ':rnge' => $rnge,
+        ':bm' => $bm,
+        ':wellstatus' => $wellstatus,
+        ':gissrc' => $gissrc,
+        ':elev' => $elev,
+        ':latitude' => $latitude,
+        ':longitude' => $longitude
+    )
+);
+echo $api.",";
+echo $lease.",";
+echo $well.",";
+echo $county.",";
+echo $district.",";
+echo $operator.",";
+echo $operatorcode.",";
+echo $field.",";
+echo $fieldcode.",";
+echo $area.",";
+echo $areacode.",";
+echo $section.",";
+echo $township.",";
+echo $rnge.",";
+echo $bm.",";
+echo $wellstatus.",";
+echo $gissrc.",";
+echo $elev.",";
+echo $latitude.",";
+echo $longitude.",";
+echo "<br>";
+
 echo "api, lease, well, county, district, operator, operatorcode, field, fieldcode, area, areacode, section, township, rnge, bm, wellstatus, gissrc, elev, latitude, longitude, date, oil, water, gas, daysprod, oilgrav, pcsg, ptbg, btu, method, waterdisp, pwtstatus_p, welltype_p, status_p, poolcode_p<br>";
 $query_p = "INSERT INTO $doggrtable_prodinj
     (api, lease, well, county, district, operator, operatorcode, field, fieldcode, area, areacode, section, township, rnge, bm, wellstatus, gissrc, elev, latitude, longitude, date, oil, water, gas, daysprod, oilgrav, pcsg, ptbg, btu, method, waterdisp, pwtstatus_p, welltype_p, status_p, poolcode_p) 
