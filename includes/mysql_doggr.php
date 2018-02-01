@@ -365,7 +365,7 @@ foreach ($inj[0] as $i){
         echo $airinj.",";
         echo $lpginj.",";
         echo $daysinj.",";
-        echo $psurfinj.",";
+        echo $pinjsurf.",";
         echo $watsrc.",";
         echo $watknd.",";
         echo $pwtstatus_i.",";
