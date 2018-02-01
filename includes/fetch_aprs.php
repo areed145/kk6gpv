@@ -1,4 +1,6 @@
 <?php
+error_reporting(0);
+
 $offset = 8;
 $now = gmdate("Y-m-d H:i:s");
 $now_l = gmdate("Y-m-d",strtotime($now . "-$offset hours"));

@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
 
 if (empty($inc)) {$inc = 0.01;}
 

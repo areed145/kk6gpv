@@ -1,4 +1,6 @@
 <?php
+error_reporting(0);
+
 $sid = 'KCABAKER64';
 $url = "https://www.wunderground.com/weatherstation/WXCurrentObXML.asp?ID=$sid";
 $obs = simplexml_load_file($url);
