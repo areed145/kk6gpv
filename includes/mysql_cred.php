@@ -1,10 +1,17 @@
 <?php
 error_reporting(0);
 
+$sid = 'KCABAKER64';
+$offset = 8;
+$callsign = 'KK6GPV';
+$callsign_wx = 'KK6GPV-13';
+$passcode = 24248;
+
 $databasehost = "localhost";
-$databasename = "enjtvqmjpz";
-$databaseusername="enjtvqmjpz";
-$databasepassword = "8eCrExD8aX";
+$databasename = "kk6gpv";
+$databasename_doggr = "doggr";
+$databaseusername="web";
+$databasepassword = "web";
 
 $wxtable = "t_wx_raw";
 $wxtable_filter = "v_wx_filter";
@@ -15,7 +22,9 @@ $aprstable = "t_aprs_raw";
 $awstable = "v_aws";
 $awstableraw = "t_aws_raw";
 $doggrtable_prodinj = "t_doggr_prodinj";
-$doggrtable_all = "t_doggr_all";
-$doggrtable_map = "t_doggr_map";
+
+$sq = 10;
+$inc = 0.001;
+$hours = 48;
 
 ?>

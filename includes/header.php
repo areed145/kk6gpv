@@ -30,6 +30,6 @@
 </head>
 <hr>
 <p align=center><img width=172 height=172 src="content/logo.png"></p>
-<h3 align=center style='text-align:center'>Coconut Barometer – Adam Reeder – KK6GPV</h3>
+<h3 align=center style='text-align:center'>Coconut Barometer – Adam Reeder – KK6GPV - DO</h3>
 
 </html>

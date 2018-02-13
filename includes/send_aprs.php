@@ -1,10 +1,8 @@
 <?php
 error_reporting(0);
 
-$sid = $_GET["sid"];
+include('mysql_cred.php');
 
-$callsign = "KK6GPV-13";
-$passcode = 24248;
 $aprs_php_ver = "0.1";
 $aprsis_url = "http://srvr.aprs-is.net:8080";
 date_default_timezone_set('UTC');
@@ -94,8 +92,8 @@ $message = $date."z";
 $message .= $lat."/".$lng;
 $message .= $wx.$sid;
 
-$login_line = "user ".$callsign." pass ". $passcode." vers aprs.php $aprs_php_ver\n";
-$message_line = $callsign .">" . $path . ":@" . $message . "\n";
+$login_line = "user ".$callsign_wx." pass ". $passcode." vers aprs.php $aprs_php_ver\n";
+$message_line = $callsign_wx .">" . $path . ":@" . $message . "\n";
 
 $ch = curl_init();
 $curl_opts = array(

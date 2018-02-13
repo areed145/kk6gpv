@@ -1,7 +1,6 @@
 <?php
 error_reporting(0);
 
-$offset = 8;
 $now = gmdate("Y-m-d H:i:s");
 $now_l = gmdate("Y-m-d",strtotime($now . "-$offset hours"));
 $end = gmdate("Y-m-d",strtotime($now_l . '+1 days'));
@@ -188,6 +187,8 @@ while($row = mysqli_fetch_assoc($result)){
     $cloudbasemax[] = $row['cloudbasemax'];
 }
 
+//echo $query_data;
+
 $query_totclm = "SELECT count(windspeed_cat) / 100 AS total, 
                 SUM(CASE WHEN windspeed_cat = 'calm' THEN 1 ELSE 0 END) AS calm 
                 FROM $wxtable_wind wind
@@ -197,6 +198,8 @@ $result = mysqli_query($con, $query_totclm);
 $row =  mysqli_fetch_assoc($result);
 $total = $row['total'];
 $calm = $row['calm'];
+
+//echo $query_totclm;
 
 $query_dirs = "select count(cat)-1 AS dirs ".
             "from $wxtable_winddrange";
@@ -295,6 +298,8 @@ $data = [[
     "cloudbasemin" => $cloudbasemin,
     "cloudbasemax" => $cloudbasemax
 ]];
+
+//echo $query_wr;
 
 $json = json_encode($data);
 

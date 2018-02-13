@@ -9,7 +9,7 @@
     <head>
         <!-- Plotly.js --><script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     </head>
-<h4 align=center>Coconut Barometer...</h4>
+<h4 align=center>Coconut Barometer</h4>
 <table>
     <tr bgcolor="#F0FFFF">
         <td>Station ID</td>

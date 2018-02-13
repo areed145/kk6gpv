@@ -9,7 +9,6 @@ if (!$con) {
     exit;
 }
 
-$sq = 10;
 $query_c = "select round(latitude/$sq,0)*$sq as latitude, round(longitude/$sq,0)*$sq as longitude, avg($data) as $data from $awstable group by round(latitude/$sq,0)*$sq, round(longitude/$sq,0)*$sq";
 $result_c = mysqli_query($con, $query_c);
 $lat_c = array();
@@ -95,7 +94,7 @@ $dataj = [[
     "raw_lifr" => $raw_lifr
 ]];
 
-$json = json_encode($dataj);
+//$json = json_encode($dataj);
 
 //echo $json;
 
