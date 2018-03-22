@@ -10,6 +10,13 @@ if ($period == 'today') {
     $hm_x = 'hour(timelocal)';
     $hm_y = 'minute(timelocal)';
 }
+elseif ($period == 'yesterday') {
+    $end = gmdate("Y-m-d",strtotime($now_l));
+    $start = gmdate("Y-m-d",strtotime($now_l . '-1 days'));
+    $gb = 'date(timelocal), time(timelocal)';
+    $hm_x = 'hour(timelocal)';
+    $hm_y = 'minute(timelocal)';
+}
 elseif ($period == 'week') {
     $start = gmdate("Y-m-d",strtotime($end . '-1 week'));
     $gb = 'date(timelocal), hour(timelocal), floor(minute(timelocal)/10)*10';

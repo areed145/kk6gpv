@@ -1,7 +1,7 @@
 <?php
 error_reporting(0);
 
-$sid = 'KCABAKER64';
+$sid = 'KCABAKER78';
 $offset = 8;
 $callsign = 'KK6GPV';
 $callsign_wx = 'KK6GPV-13';

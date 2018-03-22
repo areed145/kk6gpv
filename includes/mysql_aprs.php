@@ -65,7 +65,10 @@ foreach( $lines as $line) {
     $com = "'".substr($arr[2],6,100)."'";
     $query = "INSERT INTO $aprstable (timestamp, comment, path) VALUES('$dt', $com, $pth) ON DUPLICATE KEY UPDATE comment = $com, path = $pth;";
     $connect->exec($query);
-    echo $query;
+    //echo $query;
+
+$query = "DELETE FROM $aprstable WHERE latitude = 0 AND longitude = 0;";
+$connect->exec($query);
 }
 
 ?>

@@ -21,7 +21,7 @@ if (isset($_GET["period"])){$period = $_GET["period"];}
         <table>
             <tr>
                 <td>
-                <p>My main interest in amateur radio has to do with APRS (Automatic Packet Reporting System), an <a href="https://en.wikipedia.org/wiki/Amateur_radio">amateur radio</a>-based system for real time tactical digital communications of information of immediate value in the local area.
+                <p>My main interest in amateur radio has to do with APRS (Automatic Packet Reporting System), an <a href="https://en.wikipedia.org/wiki/Amateur_radio">amateur radio</a>-based system for real time tactical digital communications of information of immediate value in the local area.</p>
                 <p>Below are maps generated from data reported from APRS beaconing, typically while flying. aprs.fi maintains historical daily logs of points and tracks.</p>
                 </td>
             </tr>

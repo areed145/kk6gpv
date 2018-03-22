@@ -17,9 +17,14 @@ if (isset($_GET["max"])){$max = $_GET["max"];}
         <!-- Plotly.js --><script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     </head>
     <body>
-        <h4 align=center>AWS - <?php echo $data;?></h4>
-        <table bgcolor="#F0FFFF">
+        <h4 align=center>AWC - <?php echo $data;?></h4>
+        <table>
             <tr>
+                <td>
+                <p>Below are maps generated from 5-minute updates of METARS from the NOAA / NWS Aviation Weather Center</p>
+                </td>
+            </tr>
+            <tr bgcolor="#F0FFFF">
                 <td><div id="aws" align=center></div></td>
             </tr>
         </table>

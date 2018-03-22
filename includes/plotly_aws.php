@@ -94,6 +94,8 @@ if (data == 'flight_category') {
     }];
 }
 
+if (data == 'flight_category') {leg = true} else {leg = false}
+
 var layout_map = {
   paper_bgcolor: '#F0FFFF',
   plot_bgcolor: '#F0FFFF',
@@ -108,7 +110,7 @@ var layout_map = {
     zoom: 3
   }, 
   margin: {r: 0, t: 0, b: 0, l: 0, pad: 0}, 
-  showlegend: false
+  showlegend: leg
 };
 
 Plotly.setPlotConfig({mapboxAccessToken: 'pk.eyJ1IjoiYXJlZWQxNDUiLCJhIjoiY2phdzNsN2ZoMGh0bjMybzF3cTkycWYyciJ9.4aS7z-guI2VDlP3duMg2FA'})
@@ -146,8 +148,8 @@ var layout_c = {
     autosize: true,
     //width: 1000,
     height: 500,
-    margin: {r: 0, t: 0, b: 0, l: 0, pad: 0}, 
-    showlegend: false
+    margin: {r: 0, t: 0, b: 0, l: 0, pad: 0},
+    showlegend: false,
 };
 
 Plotly.newPlot(aws_contour, data_c, layout_c, {displayModeBar: false})

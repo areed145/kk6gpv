@@ -1,11 +1,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
+<!– style –><?php include('includes/style.php');?>
+<!– mysql_cred –><?php include('includes/mysql_cred.php');?>
 <!- GETS -><?php
 if (isset($_GET["period"])){$period = $_GET["period"];}
 if (isset($_GET["sid"])){$sid = $_GET["sid"];}
-?>
-<!– style –><?php include('includes/style.php');?>
-<!– mysql_cred –><?php include('includes/mysql_cred.php');?>
+?>     
 <!– fetch_wx –><?php include('includes/fetch_wx.php');?>
 <!– header –><?php include('includes/header.php');?>
 <!– colormaps –><?php include('includes/colormaps.php');?>
@@ -30,11 +30,11 @@ if (isset($_GET["sid"])){$sid = $_GET["sid"];}
         <table bgcolor="#F0FFFF">
             <tr>
                 <td width="50%"><div align=center id="wx_Tdh" width="100%">Temp vs. Dewpoint by Humidity</div></td>
-                <td width="50%"><div align=center id="wx_dTdtd" width="100%">Temp vs. Time by &#916T/&#916t</div></td>
+                <td width="50%"><div align=center id="wx_dTdtd" width="100%">Temp vs. Time by dT/dt</div></td>
             </tr>
             <tr>
-                <td width="50%"><div align=center id="wx_dTdts" width="100%">&#916T/&#916t vs. Solar Radiation by Temp</div></td>
-                <td width="50%"><div align=center id="wx_dPdts" width="100%">&#916P/&#916t vs. Windspeed by Temp</div></td>
+                <td width="50%"><div align=center id="wx_dTdts" width="100%">dT/dt vs. Solar Radiation by Temp</div></td>
+                <td width="50%"><div align=center id="wx_dPdts" width="100%">dP/dt vs. Windspeed by Temp</div></td>
             </tr>
         </table>
                 <table bgcolor="#F0FFFF">

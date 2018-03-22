@@ -7,6 +7,10 @@ $end = gmdate("Y-m-d",strtotime($now_l . '+1 days'));
 if ($period == 'today') {
     $start = gmdate("Y-m-d",strtotime($now_l));
 }
+elseif ($period == 'yesterday') {
+    $end = gmdate("Y-m-d",strtotime($now_l));
+    $start = gmdate("Y-m-d",strtotime($now_l . '-1 days'));
+}
 elseif ($period == 'week') {
     $start = gmdate("Y-m-d",strtotime($end . '-1 week'));
 }

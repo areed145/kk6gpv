@@ -390,7 +390,7 @@ var layout_windspd = {
 // RAIN
 var level = <?php echo $precipday_in; ?>;
 var gmin = 0;
-var gmax = 1;
+var gmax = 0.2;
 var leveldisp = level;
 if(level > gmax){level = gmax};
 if(level < gmin){level = gmin};

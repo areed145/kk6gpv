@@ -1,5 +1,4 @@
 <!doctype html>
-<?php $utc_now = gmdate("Y-m-d H:i:s");?>
 <html>
 <p align=center>
 <a href="doggr.php?opcode=E3700">Exxon</a> | 

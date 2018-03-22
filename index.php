@@ -61,26 +61,21 @@
     </tr>
 </table>
 <table>
-<col style="width:50%">
-<col style="width:20%">
-<col style="width:30%">
+<col style="width:55%">
+<col style="width:45%">
     <tr bgcolor="#F0FFFF">
         <td>NEXRAD Radar</td>
-        <td>Weather Underground</td>
         <td>Location</td>
     </tr>
     <tr>
-        <td rowspan=2><p align=center><img width="100%" src="http://www2.findu.com/cgi-bin/radar-find.cgi?call=KK6GPV-13"></p></td>
-        <td>
-            <p align=center><a href="http://www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=KCABAKER64"><img src="http://banners.wunderground.com/cgi-bin/banner/ban/wxBanner?bannertype=pws250&weatherstationcount=KCABAKER64" width="250" height="150" border="0" alt="Weather Underground PWS KCABAKER64" /></a></p>
-        </td>
+        <td rowspan=2><p align=center><img width="100%" src="http://www2.findu.com/cgi-bin/radar-find.cgi?call=KK6GPV-13&radar=hnx"></p></td>
         <td><p align=center><img border=0 width="100%" src="content/wxstation.jpg"></p></td>
     </tr>
     <tr>
-        <td colspan=2>
+        <td>
             <p align=center>The Coconut Barometer station is a Ambient Weather WS-1400-IP connected to the ObserverIP, which communicates observation data exclusively to Weather Underground as KCABAKER38</p>
             <p align=center><a href="https://www.wunderground.com/personal-weather-station/dashboard?ID=KCABAKER64">Weather Underground PWS page</a></p>
-            <p align=center>Observation data is then retrieved from Weather Underground and the plots / graphs are created via a headless Raspberry Pi 3 running wx_scraper Python software I wrote for this purpose (see GitHub page)</p>
+            <p align=center>Observation data is then retrieved from Weather Underground and stored. The "Station Data" plots / graphs are created with plotly.js from PHP MySQL queries off a cloud LEMP stack. This site is an update to the previous plots created by a headless Raspberry Pi 3 running wx_scraper Python software I wrote for this purpose (see GitHub page)</p>
         </td>
     </tr>
 </table>
